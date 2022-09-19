@@ -1,3 +1,5 @@
+var fotoDeptoList = [];
+
 var form = document.getElementById('crear-depto-form');
 form.addEventListener('submit', function(e){
     e.preventDefault();
@@ -29,4 +31,25 @@ form.addEventListener('submit', function(e){
     
     //Dont submit the form.
     return false; 
-})
+});
+
+var fileInput = document.getElementById("fileInput");
+
+
+fileInput.addEventListener("change", x => {
+    reader = new FileReader();
+    file = fileInput.files[0];
+    reader.addEventListener("load", () => {
+        console.log(reader.result);
+    })
+
+    var image = reader.readAsDataURL(file);
+
+    let fotoDepto = {
+        "tituloFotoDepto": "titulo",
+        "fotoDepto": image
+    }
+    fotoDeptoList.push(fotoDepto)
+    console.log(fotoDeptoList)
+
+});
