@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en">                                       <!-- listar los usuarios registrados en el sistema -->
 
 <head>
     <meta charset="utf-8">
@@ -78,7 +78,7 @@
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h5 class="mb-0">Nombre Apellido</h5>
+                        <h6 class="mb-0">Nombre Apellido</h6>
                         <span>Admin</span>
                     </div>
                 </div>
@@ -146,11 +146,17 @@
                     <!-- _Users start -->
                         <div class="d-flex align-items-center justify-content-between mb-4 row">
                             <h6 class="mb-0">Usuarios</h6>
-                            
-                            <input type="text" class="col-xl-3 col-md-3 col-sm-6" id="myinput" onkeyup="myFunction()" placeholder="Buscar por id">
-                            <input type="text" class="col-xl-3 col-md-3 col-sm-6" id="myInput" onkeyup="myFunction()" placeholder="Tipo de usuario">
-                            <input type="text" class="col-xl-3 col-md-3 col-sm-6" id="myInput" onkeyup="myFunction()" placeholder="Buscar por nombre">
-                            <input type="text" class="col-xl-3 col-md-3 col-sm-6" id="myInput" onkeyup="myFunction()" placeholder="Buscar por rut">
+                            <!-- Filtros para la busqueda -->
+                            <input type="text" class="col-xl-3 col-md-3 col-sm-6" id="myinput" placeholder="Buscar por id">
+                            <div class="col-xl-3 col-md-3 col-sm-6">
+                                <select class="form-select mb-3" aria-label="Default select example">
+                                    <option selected>Tipo usuario</option>
+                                    <option value="1">tipo 1</option>
+                                    <option value="2">tipo 2</option>
+                                </select></div>
+
+                            <input type="text" class="col-xl-3 col-md-3 col-sm-6" id="myInput" placeholder="Buscar por nombre">
+                            <input type="text" class="col-xl-3 col-md-3 col-sm-6" id="myInput" placeholder="Buscar por rut">
                             <a href="" class="mb-0">Mostrar todos</a>
                         </div>
                     
