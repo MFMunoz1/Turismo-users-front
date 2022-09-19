@@ -87,9 +87,9 @@
                     <div class="nav-item dropdown ">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-th me-2"></i>Departamentos</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="button.html" class="dropdown-item">Crear departamento</a>
-                            <a href="typography.html" class="dropdown-item">Modificar departamento</a>
-                            <a href="element.html" class="dropdown-item">Eliminar departamento</a>
+                            <a href="crear depto.html" class="dropdown-item">Crear departamento</a>
+                            <a href="actualizar depto.html" class="dropdown-item">Modificar departamento</a>
+                            <a href="Eliminar depto.html" class="dropdown-item">Eliminar departamento</a>
                             <a href="listar depto.html" class="dropdown-item active">Listar departamentos</a>
                         </div>
                     </div>
@@ -141,16 +141,32 @@
         <!-- Content Start -->
         <div class="content w-100">
             
-            <!-- Recent Sales Start -->
+            <!-- Table Start -->
             
 
             <div class="container-fluid pt-4 px-4">
                 <div class="bg-light text-center rounded p-4">
                     
                         <div class="d-flex align-items-center justify-content-between mb-4 row">
-                            <h6 class="mb-0 col-xl-3 col-md-3">Departamentos</h6>
-                            <input type="text" class="col-xl-3 col-md-3 col-sm-4" id="myInput" onkeyup="myFunction()" placeholder="Buscar por comuna">
-                            <input type="text" class="col-xl-3 col-md-3 col-sm-4" id="myInput" onkeyup="myFunction()" placeholder="Buscar por region">
+                            <h6 class="mb-4 ">Servicios extra</h6>
+                            <div class="col-xl-3 col-md-3">
+                            <select class="form-select mb-3" aria-label="Default select example">
+                                <option selected>Buscar por tipo</option>
+                                <option value="1">Tour</option>
+                                <option value="2">Transporte</option>
+                            </select></div>
+                            <div class="col-xl-3 col-md-3">
+                                <select class="form-select mb-3" aria-label="Default select example">
+                                    <option selected>Buscar por Region</option>
+                                    <option value="1">Valparaiso</option>
+                                    <option value="2">Santiago</option>
+                                </select></div>
+                                <div class="col-xl-3 col-md-3">
+                                    <select class="form-select mb-3" aria-label="Default select example">
+                                        <option selected>Buscar por comuna</option>
+                                        <option value="1">Comuna 1</option>
+                                        <option value="2">Comuna 2</option>
+                                    </select></div>
                             <a href="" class="col-xl-3 col-md-3 col-sm-4">Mostrar todos</a>
                         </div>
                     
@@ -159,92 +175,103 @@
                             <thead>
                                 <tr class="text-dark">
                                     <th scope="col">Id</th>
-                                    <th scope="col">Direccion</th>
-                                    <th scope="col">Comuna</th>
+                                    <th scope="col">titulo</th>
+                                    <th scope="col">Persona a cargo</th>
+                                    <th scope="col">maximo personas</th>
                                     <th scope="col">Region</th>
-                                    <th scope="col">Estado</th>
+                                    <th scope="col">Comuna</th>
                                     <th scope="col">Accion</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>01</td>
-                                    <td>Calle #123</td>
+                                    <td>Lo mejor de valpo</td>
+                                    <td>Manuel Rodriguez</td>
+                                    <td>6</td>
                                     <td>Viña del Mar</td>
                                     <td>Valparaiso</td>
-                                    <td>Habilitado</td>
                                     <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
                                 </tr>
                                 <tr>
                                     <td>02</td>
-                                    <td>Calle #123</td>
+                                    <td>Ruta de museos</td>
+                                    <td>Franco Bravo</td>
+                                    <td>12</td>
                                     <td>Providencia</td>
                                     <td>Santiago</td>
-                                    <td>Habilitado</td>
                                     <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
                                 </tr>
                                 <tr>
                                     <td>03</td>
                                     <td>Calle #123</td>
+                                    <td>Habilitado</td>
+                                    <td>Habilitado</td>
                                     <td>Puerto Montt</td>
                                     <td>Los Lagos</td>
-                                    <td>Habilitado</td>
                                     <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
                                 </tr>
                                 <tr>
                                     <td>04</td>
                                     <td>Calle #123</td>
+                                    <td>Habilitado</td>
+                                    <td>Habilitado</td>
                                     <td>La Serena</td>
                                     <td>Coquimbo</td>
-                                    <td>Habilitado</td>
                                     <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
                                 </tr>
                                 <tr>
                                     <td>05</td>
                                     <td>Calle #123</td>
+                                    <td>Habilitado</td>
+                                    <td>Habilitado</td>
                                     <td>Pucon</td>
                                     <td>Araucania</td>
-                                    <td>Habilitado</td>
                                     <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
                                 </tr>
                                 <tr>
                                     <td>06</td>
                                     <td>Calle #123</td>
+                                    <td>Habilitado</td>
+                                    <td>Habilitado</td>
                                     <td>Puerto Montt</td>
                                     <td>Los Lagos</td>
-                                    <td>Habilitado</td>
                                     <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
                                 </tr>
                                 <tr>
                                     <td>07</td>
                                     <td>Calle #123</td>
+                                    <td>Habilitado</td>
+                                    <td>Habilitado</td>
                                     <td>Puerto Montt</td>
                                     <td>Los Lagos</td>
-                                    <td>Habilitado</td>
                                     <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
                                 </tr>
                                 <tr>
                                     <td>08</td>
                                     <td>Calle #123</td>
+                                    <td>Habilitado</td>
+                                    <td>Habilitado</td>
                                     <td>Puerto Montt</td>
                                     <td>Los Lagos</td>
-                                    <td>Habilitado</td>
                                     <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
                                 </tr>
                                 <tr>
                                     <td>09</td>
                                     <td>Calle #123</td>
+                                    <td>Habilitado</td>
+                                    <td>Habilitado</td>
                                     <td>Puerto Montt</td>
                                     <td>Los Lagos</td>
-                                    <td>Habilitado</td>
                                     <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
                                 </tr>
                                 <tr>
                                     <td>10</td>
                                     <td>Calle #123</td>
+                                    <td>Habilitado</td>
+                                    <td>Habilitado</td>
                                     <td>Puerto Montt</td>
                                     <td>Los Lagos</td>
-                                    <td>Habilitado</td>
                                     <td><a class="btn btn-sm btn-primary" href="">Eliminar</a></td>
                                 </tr>
                             </tbody>
@@ -252,7 +279,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Recent Sales End -->
+            <!-- Table End -->
 
 
             
