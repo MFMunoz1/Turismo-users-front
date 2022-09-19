@@ -60,3 +60,13 @@ var toBase64 = file => new Promise((resolve, reject) => {
     reader.onload = () => resolve(reader.result);
     reader.onerror = error => reject(error);
 });
+
+//espera que la pagina este totalmente cargada y ejecuta la funcion
+window.addEventListener('load', async (event) => {
+    const respuesta = await fetch("http://localhost:8085/mantenedor/listar-condiciones");
+    console.log(respuesta.status)
+    console.log(respuesta.body)
+
+    const datos = await respuesta.json();
+    console.log(datos);
+});
