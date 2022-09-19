@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">                               <!-- ventana de listar departamento -->
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>Turismo Real - Departamentos</title>
+    <title>Turismo Real - Crear Departamento</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -43,11 +43,10 @@
                 
                 <div class="navbar-nav align-items-center ms-auto">
                     
-                    
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                            <span class="d-none d-lg-inline-flex">Nombre Apellido</span>
+                            <span class="d-none d-lg-inline-flex">Nombre Apelido</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">Mi perfil</a>
@@ -57,7 +56,7 @@
                     </div>
                 </div>
             </nav>
-            <!-- Navbar End -->
+    <!-- Navbar End -->
     <div class="container bg-white d-flex p-0 w-100">
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -65,10 +64,10 @@
                 <span class="sr-only">Cargando...</span>
             </div>
         </div>
-        <!-- Spinner End -->
+    <!-- Spinner End -->
 
 
-        <!-- Sidebar Start -->
+    <!-- Sidebar Start -->
         <div class="sidebar pe-1 pb-3">
             <nav class="navbar bg-light navbar-light">
                 
@@ -78,7 +77,7 @@
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h6 class="mb-0">Nombre Apellido</h6>
+                        <h5 class="mb-0">Nombre Apellido</h5>
                         <span>Admin</span>
                     </div>
                 </div>
@@ -87,10 +86,10 @@
                     <div class="nav-item dropdown ">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-th me-2"></i>Departamentos</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="crear depto.html" class="dropdown-item">Crear departamento</a>
+                            <a href="crear depto.html" class="dropdown-item active">Crear departamento</a>
                             <a href="actualizar depto.html" class="dropdown-item">Modificar departamento</a>
                             <a href="Eliminar depto.html" class="dropdown-item">Eliminar departamento</a>
-                            <a href="listar depto.html" class="dropdown-item active">Listar departamentos</a>
+                            <a href="listar depto.html" class="dropdown-item">Listar departamentos</a>
                         </div>
                     </div>
                     <div class="nav-item dropdown ">
@@ -135,159 +134,149 @@
                 </div>
             </nav>
         </div>
-        <!-- Sidebar End -->
+    <!-- Sidebar End -->
 
 
-        <!-- Content Start -->
-        <div class="content w-100">
-            
-            <!-- Table Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-light text-center rounded p-4">                     <!-- tabla con el listado de los departamentos -->
-                    
-                        <div class="d-flex align-items-center justify-content-between mb-4 row">
-                            <h6 class="mb-2 col-xl-3 col-md-3">Departamentos</h6>
-                            <div class="col-xl-3 col-md-3 col-sm-4">
-                                <select class="form-select mb-3" aria-label="Default select example">
-                                    <option selected>Region</option>
-                                    <option value="1">region 1</option>
-                                    <option value="2">region 2</option>
-                                </select></div>
+    <!-- Content Start -->
+        <div class="container-fluid pt-4 px-4">
+            <div class="row g-4">
 
-                            <div class="col-xl-3 col-md-3 col-sm-4">
-                                <select class="form-select mb-3" aria-label="Default select example">
-                                    <option selected>comuna</option>
-                                    <option value="1">comuna 1</option>
-                                    <option value="2">comuna 2</option>
-                                </select></div>
-                            <a href="" class="col-xl-3 col-md-3 col-sm-4">Mostrar todos</a>
-                        </div>
-                    
-                    <div class="table-responsive">
-                        <table class="table text-start align-middle table-bordered table-hover mb-0">
-                            <thead>
-                                <tr class="text-dark">
-                                    <th scope="col">Id</th>
-                                    <th scope="col">Direccion</th>
-                                    <th scope="col">Comuna</th>
-                                    <th scope="col">Region</th>
-                                    <th scope="col">Estado</th>
-                                    <th scope="col">Accion</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>01</td>
-                                    <td>Calle #123</td>
-                                    <td>Viña del Mar</td>
-                                    <td>Valparaiso</td>
-                                    <td>Habilitado</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detalles</a></td>
-                                </tr>
-                                <tr>
-                                    <td>02</td>
-                                    <td>Calle #123</td>
-                                    <td>Providencia</td>
-                                    <td>Santiago</td>
-                                    <td>Habilitado</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detalles</a></td>
-                                </tr>
-                                <tr>
-                                    <td>03</td>
-                                    <td>Calle #123</td>
-                                    <td>Puerto Montt</td>
-                                    <td>Los Lagos</td>
-                                    <td>Habilitado</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detalles</a></td>
-                                </tr>
-                                <tr>
-                                    <td>04</td>
-                                    <td>Calle #123</td>
-                                    <td>La Serena</td>
-                                    <td>Coquimbo</td>
-                                    <td>Habilitado</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detalles</a></td>
-                                </tr>
-                                <tr>
-                                    <td>05</td>
-                                    <td>Calle #123</td>
-                                    <td>Pucon</td>
-                                    <td>Araucania</td>
-                                    <td>Habilitado</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detalles</a></td>
-                                </tr>
-                                <tr>
-                                    <td>06</td>
-                                    <td>Calle #123</td>
-                                    <td>Puerto Montt</td>
-                                    <td>Los Lagos</td>
-                                    <td>Habilitado</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detalles</a></td>
-                                </tr>
-                                <tr>
-                                    <td>07</td>
-                                    <td>Calle #123</td>
-                                    <td>Puerto Montt</td>
-                                    <td>Los Lagos</td>
-                                    <td>Habilitado</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detalles</a></td>
-                                </tr>
-                                <tr>
-                                    <td>08</td>
-                                    <td>Calle #123</td>
-                                    <td>Puerto Montt</td>
-                                    <td>Los Lagos</td>
-                                    <td>Habilitado</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detalles</a></td>
-                                </tr>
-                                <tr>
-                                    <td>09</td>
-                                    <td>Calle #123</td>
-                                    <td>Puerto Montt</td>
-                                    <td>Los Lagos</td>
-                                    <td>Habilitado</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detalles</a></td>
-                                </tr>
-                                <tr>
-                                    <td>10</td>
-                                    <td>Calle #123</td>
-                                    <td>Puerto Montt</td>
-                                    <td>Los Lagos</td>
-                                    <td>Habilitado</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detalles</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                
+                <div class="col-sm-12 col-xl-12">
+                    <div class="bg-light rounded p-4">
+                        <h6 class="mb-4">Nuevo Usuario</h6>
+                        <form>
+
+                            <div class="row mb-3">
+                                <label for="inputPassword3" class="col-sm-3 col-form-label">Tipo de usuario</label> <!-- Filtro de tipo de servicio -->
+                                <div class="col-sm-9">
+                                    <select class="form-select mb-3" aria-label="Default select example">
+                                        <option selected>Seleccione tipo de usuario</option>
+                                        <option value="1">Funcionario</option>
+                                        <option value="2">Administrador</option>
+                                    </select>
+                                    
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="inputPassword3" class="col-sm-3 col-form-label">Nombre usuario</label> <!-- Variable de usuario -->
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="inputname" placeholder="Nombre Apellido">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputPassword3" class="col-sm-3 col-form-label">rut usuario</label> <!-- Variable de usuario -->
+                                <div class="col-sm-9">
+                                    <input type="number" class="form-control" id="inputname" placeholder="12345678-9">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="inputPassword3" class="col-sm-3 col-form-label">Fecha nacimiento</label> <!-- Variable de usuario -->
+                                <div class="col-sm-9">
+                                    <input type="date" class="form-control" id="inputname" placeholder="dd/mm/aaaa">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <legend class="col-form-label col-sm-2 pt-0">Genero</legend>  <!-- Variable de usuario -->
+                                <div class="col-sm-10">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadios"
+                                        id="gridRadios1" value="option1" checked>
+                                    <label class="form-check-label" for="gridRadios1">
+                                        Femenino
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadios"
+                                        id="gridRadios2" value="option2">
+                                    <label class="form-check-label" for="gridRadios2">
+                                        Masculino
+                                    </label>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputPassword3" class="col-sm-3 col-form-label">Email empresa</label> <!-- Variable de usuario -->
+                                <div class="col-sm-9">
+                                    <input type="email" class="form-control" id="inputname" placeholder="name.lastname@turismoreal.cl">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputPassword3" class="col-sm-3 col-form-label">Telefono</label> <!-- Variable de usuario -->
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="inputname" placeholder="987654321">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="inputPassword3" class="col-sm-3 col-form-label">Contraseña provisoria</label> <!-- Variable de usuario -->
+                                <div class="col-sm-9">
+                                    <input type="password" class="form-control" id="inputname" placeholder="password">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputPassword3" class="col-sm-3 col-form-label">Repetir contraseña</label> <!-- Variable de usuario -->
+                                <div class="col-sm-9">
+                                    <input type="password" class="form-control" id="inputname" placeholder="password">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <legend class="col-form-label col-sm-2 pt-0">Estado de la cuenta</legend> <!-- Variable de usuario -->
+                                <div class="col-sm-10">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadios"
+                                        id="gridRadios1" value="option1" checked>
+                                    <label class="form-check-label" for="gridRadios1">
+                                        Habilitada
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadios"
+                                        id="gridRadios2" value="option2">
+                                    <label class="form-check-label" for="gridRadios2">
+                                        Deshabilitada
+                                    </label>
+                                </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
-            </div>
-            <!-- Table End -->
+                
+                
+                <button type="submit" class="btn btn-primary">Crear nuevo usuario</button> 
 
-
-            
-
-
-            <!-- Footer Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-light rounded-top p-4">
-                    <div class="row">
-                        <div class="col-12 col-sm-6 text-center text-sm-start">
-                            &copy; <a href="#">Turismo Real</a>, Todos los derechos reservados. 
-                        </div>
-                        <div class="col-12 col-sm-6 text-center text-sm-end">
-                             Duoc UC<a href="#">, Portafolio 2022</a>
-                        </br>
-                         Caso 1<a class="border-bottom" href="#" target="_blank">, Seccion-001D</a>
+                    <!-- Footer Start -->
+                    <div class="container-fluid pt-4 px-4">
+                        <div class="bg-light rounded-top p-4">
+                            <div class="row">
+                                <div class="col-12 col-sm-6 text-center text-sm-start">
+                                    &copy; <a href="#">Turismo Real</a>, Todos los derechos reservados. 
+                                </div>
+                                <div class="col-12 col-sm-6 text-center text-sm-end">
+                                    Duoc UC<a href="#">, Portafolio 2022</a>
+                                </br>
+                                Caso 1<a class="border-bottom" href="#" target="_blank">, Seccion-001D</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                    <!-- Footer End -->
+
+                </div>    
             </div>
-            <!-- Footer End -->
         </div>
-        <!-- Content End -->
+        <!-- Widgets End -->
 
 
-        <!-- Back to Top -->
+       
+        
+    <!-- Content End -->
+
+
+    <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en">                                             <!-- listar los departamentos existentes para modificar su disponibilidad -->
 
 <head>
     <meta charset="utf-8">
@@ -149,8 +149,19 @@
                     
                         <div class="d-flex align-items-center justify-content-between mb-4 row">
                             <h6 class="mb-0 col-xl-3 col-md-3">Departamentos</h6>
-                            <input type="text" class="col-xl-3 col-md-3 col-sm-4" id="myInput" onkeyup="myFunction()" placeholder="Buscar por comuna">
-                            <input type="text" class="col-xl-3 col-md-3 col-sm-4" id="myInput" onkeyup="myFunction()" placeholder="Buscar por region">
+                            <div class="col-xl-3 col-md-3 col-sm-4">
+                                <select class="form-select mb-3" aria-label="Default select example">
+                                    <option selected>Region</option>
+                                    <option value="1">region 1</option>
+                                    <option value="2">region 2</option>
+                                </select></div>
+
+                            <div class="col-xl-3 col-md-3 col-sm-4">
+                                <select class="form-select mb-3" aria-label="Default select example">
+                                    <option selected>comuna</option>
+                                    <option value="1">comuna 1</option>
+                                    <option value="2">comuna 2</option>
+                                </select></div>
                             <a href="" class="col-xl-3 col-md-3 col-sm-4">Mostrar todos</a>
                         </div>
                     

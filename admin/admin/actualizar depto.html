@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">                                      <!-- Lista de departamentos para seleccionar el depa a modificar -->
-
+                                                            
+                                                            
+                                                          <!-- Ventana que continua en actualizardepto.html (sin espacio) -->
+        
 <head>
     <meta charset="utf-8">
     <title>Turismo Real - Departamentos</title>
@@ -68,7 +71,7 @@
         <!-- Spinner End -->
 
 
-        <!-- Sidebar Start -->
+        <!-- Sidebar Start -->                                               <!-- menu lateral -->
         <div class="sidebar pe-1 pb-3">
             <nav class="navbar bg-light navbar-light">
                 
@@ -145,12 +148,23 @@
             
 
             <div class="container-fluid pt-4 px-4">
-                <div class="bg-light text-center rounded p-4">
+                <div class="bg-light text-center rounded p-4">                              <!-- Tabla con el listado de departamentos -->
                     
                         <div class="d-flex align-items-center justify-content-between mb-4 row">
-                            <h6 class="mb-0 col-xl-3 col-md-3">Departamentos</h6>
-                            <input type="text" class="col-xl-3 col-md-3 col-sm-4" id="myInput" onkeyup="myFunction()" placeholder="Buscar por comuna">
-                            <input type="text" class="col-xl-3 col-md-3 col-sm-4" id="myInput" onkeyup="myFunction()" placeholder="Buscar por region">
+                            <h6 class="mb-2 col-xl-3 col-md-3">Departamentos</h6>
+                            <div class="col-xl-3 col-md-3 col-sm-4">
+                                <select class="form-select mb-3" aria-label="Default select example">
+                                    <option selected>Region</option>
+                                    <option value="1">region 1</option>
+                                    <option value="2">region 2</option>
+                                </select></div>
+
+                            <div class="col-xl-3 col-md-3 col-sm-4">
+                                <select class="form-select mb-3" aria-label="Default select example">
+                                    <option selected>comuna</option>
+                                    <option value="1">comuna 1</option>
+                                    <option value="2">comuna 2</option>
+                                </select></div>
                             <a href="" class="col-xl-3 col-md-3 col-sm-4">Mostrar todos</a>
                         </div>
                     

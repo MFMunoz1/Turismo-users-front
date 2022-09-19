@@ -141,21 +141,34 @@
         <!-- Content Start -->
         <div class="content w-100">
             
-            <!-- Recent Sales Start -->
+            <!-- listado inicio -->
             
 
             <div class="container-fluid pt-4 px-4">
                 <div class="bg-light text-center rounded p-4">
                     
-                        <div class="d-flex align-items-center justify-content-between mb-4 row">
+                        <div class="d-flex align-items-center justify-content-between mb-4 row">  <!-- Filtros de busqueda -->
                             <h6 class="mb-0 col-xl-3 col-md-3">Departamentos</h6>
-                            <input type="text" class="col-xl-3 col-md-3 col-sm-4" id="myInput" onkeyup="myFunction()" placeholder="Buscar por comuna">
-                            <input type="text" class="col-xl-3 col-md-3 col-sm-4" id="myInput" onkeyup="myFunction()" placeholder="Buscar por region">
+
+                            <div class="col-xl-3 col-md-3 col-sm-4">
+                                <select class="form-select mb-3" aria-label="Default select example">
+                                    <option selected>Region</option>
+                                    <option value="1">region 1</option>
+                                    <option value="2">region 2</option>
+                                </select></div>
+
+                            <div class="col-xl-3 col-md-3 col-sm-4">
+                                <select class="form-select mb-3" aria-label="Default select example">
+                                    <option selected>comuna</option>
+                                    <option value="1">comuna 1</option>
+                                    <option value="2">comuna 2</option>
+                                </select></div>
+
                             <a href="" class="col-xl-3 col-md-3 col-sm-4">Mostrar todos</a>
                         </div>
                     
                     <div class="table-responsive">
-                        <table class="table text-start align-middle table-bordered table-hover mb-0">
+                        <table class="table text-start align-middle table-bordered table-hover mb-0">      <!-- nombre datos a mostrar -->
                             <thead>
                                 <tr class="text-dark">
                                     <th scope="col">Id</th>
@@ -166,6 +179,7 @@
                                     <th scope="col">Accion</th>
                                 </tr>
                             </thead>
+                                                                            <!-- datos departamentos -->
                             <tbody>
                                 <tr>
                                     <td>01</td>
@@ -252,7 +266,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Recent Sales End -->
+            <!-- listado termino -->
 
 
             
