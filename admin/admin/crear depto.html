@@ -186,9 +186,9 @@
                                 <div class="col-sm-9">
                                     <select name="region" class="form-select mb-3" aria-label="Default select example">
                                         <option selected>Seleccione region</option>
-                                        <option value="1">Valparaiso</option>
-                                        <option value="2">Metropolitana</option>
-                                        <option value="3">Los Lagos</option>
+                                        <option value="Valparaiso">Valparaiso</option>
+                                        <option value="Metropolitana">Metropolitana</option>
+                                        <option value="Los Lagos">Los Lagos</option>
                                     </select>
                                     
                                 </div>
@@ -198,9 +198,9 @@
                                 <div class="col-sm-9">
                                     <select name="comuna" class="form-select mb-3" aria-label="Default select example">
                                         <option selected>Seleccione comuna</option>
-                                        <option value="1">Santiago</option>
-                                        <option value="2">Providencia</option>
-                                        <option value="3">San Miguel</option>
+                                        <option value="Santiago">Santiago</option>
+                                        <option value="Providencia">Providencia</option>
+                                        <option value="San Miguel">San Miguel</option>
                                     </select>
                                 </div>
                             </div>
@@ -241,14 +241,14 @@
                                 <div class="col-sm-10">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="estado"
-                                        id="gridRadios1" value="option1" checked>
+                                        id="gridRadios1" value="Habilitado" checked>
                                     <label class="form-check-label" for="gridRadios1">
                                         Habilitado
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="estado"
-                                        id="gridRadios2" value="option2">
+                                        id="gridRadios2" value="Deshabilitado">
                                     <label class="form-check-label" for="gridRadios2">
                                         Deshabilitado
                                     </label>
@@ -325,73 +325,71 @@
                         </div>
                     </div>
                 </div>
-            </form>
 
-                <!-------------------------------------- FIN FORMULARIO -------------------------------------->
-
+                <!---------------------------------- SERVICIOS EXTRA ------------------------------ -->
                 <div class="col-xs-12 col-md-6 col-sm-12 col-xl-6 row g-4">
-                <!-- Servicios -->
-                    <div class="col-sm-12 col-xl-12">
-                        <div class="bg-light rounded  p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Servicios</h6>
-                                <a href="">Agregar todos</a>
-                            </div>
-                            <div class="d-flex mb-2">
-                                <div class="col-sm-10">
-                                    <select class="form-select mb-3" aria-label="Default select example">
-                                        <option selected>Seleccione servicio</option> <!-- Servicios ya existentes -->
-                                        <option value="1">servicio 1</option>
-                                        <option value="2">servicio 2</option>
-                                        <option value="3">servicio 3</option>
-                                    </select>
+                    <!-- Servicios -->
+                        <div class="col-sm-12 col-xl-12">
+                            <div class="bg-light rounded  p-4">
+                                <div class="d-flex align-items-center justify-content-between mb-4">
+                                    <h6 class="mb-0">Servicios</h6>
+                                    <a href="">Agregar todos</a>
                                 </div>
-                                <button type="button" class="btn btn-primary ms-2">Agregar</button>
-                            </div>
-                            <div class="d-flex align-items-center border-bottom py-2">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 align-items-center justify-content-between">
-                                        <span>Parrilla</span>
-                                        <button class="btn btn-sm"><i class="fa fa-times"></i></button>
+                                <div class="d-flex mb-2">
+                                    <div class="col-sm-10">
+                                        <select class="form-select mb-3" aria-label="Default select example">
+                                            <option selected>Seleccione servicio</option> <!-- Servicios ya existentes -->
+                                            <option value="1">servicio 1</option>
+                                            <option value="2">servicio 2</option>
+                                            <option value="3">servicio 3</option>
+                                        </select>
+                                    </div>
+                                    <button type="button" class="btn btn-primary ms-2">Agregar</button>
+                                </div>
+                                <div class="d-flex align-items-center border-bottom py-2">
+                                    <div class="w-100 ms-3">
+                                        <div class="d-flex w-100 align-items-center justify-content-between">
+                                            <span  >Parrilla</span>
+                                            <button class="btn btn-sm"><i class="fa fa-times"></i></button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="d-flex align-items-center border-bottom py-2">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 align-items-center justify-content-between">
-                                        <span>Jacuzzi</span>
-                                        <button class="btn btn-sm"><i class="fa fa-times"></i></button>
+                                <div class="d-flex align-items-center border-bottom py-2">
+                                    <div class="w-100 ms-3">
+                                        <div class="d-flex w-100 align-items-center justify-content-between">
+                                            <span>Jacuzzi</span>
+                                            <button class="btn btn-sm"><i class="fa fa-times"></i></button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="d-flex align-items-center border-bottom py-2">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 align-items-center justify-content-between">
-                                        <span>Piscina</span>
-                                        <button class="btn btn-sm text-primary"><i class="fa fa-times"></i></button>
+                                <div class="d-flex align-items-center border-bottom py-2">
+                                    <div class="w-100 ms-3">
+                                        <div class="d-flex w-100 align-items-center justify-content-between">
+                                            <span>Piscina</span>
+                                            <button class="btn btn-sm text-primary"><i class="fa fa-times"></i></button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="d-flex align-items-center border-bottom py-2">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 align-items-center justify-content-between">
-                                        <span>Jardin</span>
-                                        <button class="btn btn-sm"><i class="fa fa-times"></i></button>
+                                <div class="d-flex align-items-center border-bottom py-2">
+                                    <div class="w-100 ms-3">
+                                        <div class="d-flex w-100 align-items-center justify-content-between">
+                                            <span>Jardin</span>
+                                            <button class="btn btn-sm"><i class="fa fa-times"></i></button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="d-flex align-items-center pt-2">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 align-items-center justify-content-between">
-                                        <span>Quincho</span>
-                                        <button class="btn btn-sm"><i class="fa fa-times"></i></button>
+                                <div class="d-flex align-items-center pt-2">
+                                    <div class="w-100 ms-3">
+                                        <div class="d-flex w-100 align-items-center justify-content-between">
+                                            <span>Quincho</span>
+                                            <button class="btn btn-sm"><i class="fa fa-times"></i></button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>  
-                    </div>
+                            </div>  
+                        </div>
 
-
+                        <!---------------------------- CONDICIONES DE USO  ------------------------------>
                         <div class="col-sm-12 col-xl-12">  
                             <!-- Condiciones -->
                             <div class="bg-light rounded p-4">
@@ -453,6 +451,15 @@
                         </div>
                         <!-- Condiciones End-->  
                     </div>
+                    
+            </form>
+
+                <!-------------------------------------- FIN FORMULARIO -------------------------------------->
+
+                
+
+
+                        
                 </div>                    
                 <div class="col-sm-12 col-xl-6">
                     <div class="bg-light rounded p-4">
