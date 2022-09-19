@@ -1,23 +1,44 @@
 var fotoDeptoList = [];
 
 var form = document.getElementById('crear-depto-form');
-form.addEventListener('submit', function(e){
+form.addEventListener('submit', async function(e){
     e.preventDefault();
+
+    var fotoDeptoList = [];
+    // cargar imagen
+    const userFile = document.getElementById('formFile').files[0];
+    var image64 = await toBase64(userFile);
+
     var formData = new FormData(form);
 
-    const plainFormData = Object.fromEntries(formData.entries());
+    var fotoEnviar = {
+        "tituloFotoDepto": "tituloFotoDepto",
+        "fotoDepto": image64
+    }
+
+    fotoDeptoList.push(fotoEnviar);
+    
+    // añadiendo lista de serivicion a object plain 
+    const plainObjectFormData = Object.fromEntries(formData.entries());
     const listaServicios = [
         {
-            "idServicioDepto":1
+            "idServicioDepto":3
         }
     ]
-    plainFormData.servicioDeptoList = listaServicios;
-    formDataJsonString = JSON.stringify(plainFormData);
-    console.log(plainFormData)
+    const listaCondiciones = [
+        {
+            "idCondicion":3
+        }
+    ]
+    plainObjectFormData.servicioDeptoList = listaServicios;
+    plainObjectFormData.fotoDeptoList = fotoDeptoList
+    plainObjectFormData.condicionesDeUsoList = listaCondiciones
+
+    console.log(JSON.stringify(plainObjectFormData))
     
     fetch("http://localhost:8085/departamento/crear-depto",
     {
-       body: formDataJsonString,
+       body: JSON.stringify(plainObjectFormData),
        method: "post",
        mode: "cors",
        headers: {
@@ -33,23 +54,9 @@ form.addEventListener('submit', function(e){
     return false; 
 });
 
-var fileInput = document.getElementById("fileInput");
-
-
-fileInput.addEventListener("change", x => {
-    reader = new FileReader();
-    file = fileInput.files[0];
-    reader.addEventListener("load", () => {
-        console.log(reader.result);
-    })
-
-    var image = reader.readAsDataURL(file);
-
-    let fotoDepto = {
-        "tituloFotoDepto": "titulo",
-        "fotoDepto": image
-    }
-    fotoDeptoList.push(fotoDepto)
-    console.log(fotoDeptoList)
-
+var toBase64 = file => new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = error => reject(error);
 });

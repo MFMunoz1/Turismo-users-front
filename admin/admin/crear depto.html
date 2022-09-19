@@ -267,13 +267,13 @@
                         <div class="row mb-3">
                             <label for="inputPassword3" class="col-sm-3 col-form-label">Titulo de imagen</label>
                             <div class="col-sm-9">
-                                <input name="tituloFotoDepto" type="text" class="form-control" id="inputname">
+                                <input type="text" class="form-control" id="inputname">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-sm-9">
                                 <!-- recibe jpeg y png -->
-                                <input name="fotoDepto" class="form-control" type="file" id="formFile">
+                                <input class="form-control" type="file" id="formFile">
                             </div>
                             <button type="button" class="btn btn-primary col-sm-3">Cargar</button>
                         </div>
@@ -453,90 +453,78 @@
                         </div>
                         <!-- Condiciones End-->  
                     </div>
-                </div>
-
-                    
-
-
-
-
-
-
-
-                    
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light rounded p-4">
-                            <h6 class="mb-4">Inventario</h6> <!--Elementos ya existentes en la base de datos, selecciona y agrega cantidad -->
-                            <div class="row mb-3">
-                                <label for="inputPassword3" class="col-sm-3 col-form-label">Elemento</label>
-                                <div class="col-sm-9">
-                                    <select class="form-select mb-3" aria-label="Default select example">
-                                        <option selected>Escoja un elemento</option>
-                                        <option value="1">lampara decorativa</option>
-                                        <option value="2">centro de mesa</option>
-                                        <option value="3">florero de cristal</option>
-                                    </select>
-                                </div>
-                                
-                            </div>
-                            <div class="row mb-3">
-                                <label for="inputPassword3" class="col-sm-3 col-form-label">Cantidad</label>
-                                <div class="col-sm-6"><input class="form-control" type="number" id="formFile"></div>
-                                
-                                <button type="button" class="btn btn-primary col-sm-3">Cargar</button>
+                </div>                    
+                <div class="col-sm-12 col-xl-6">
+                    <div class="bg-light rounded p-4">
+                        <h6 class="mb-4">Inventario</h6> <!--Elementos ya existentes en la base de datos, selecciona y agrega cantidad -->
+                        <div class="row mb-3">
+                            <label for="inputPassword3" class="col-sm-3 col-form-label">Elemento</label>
+                            <div class="col-sm-9">
+                                <select class="form-select mb-3" aria-label="Default select example">
+                                    <option selected>Escoja un elemento</option>
+                                    <option value="1">lampara decorativa</option>
+                                    <option value="2">centro de mesa</option>
+                                    <option value="3">florero de cristal</option>
+                                </select>
                             </div>
                             
-                            <div class="container-fluid pt-4 px-4">
-                                <div class="bg-light text-center rounded p-4">
-                                    
-                                        <div class="d-flex align-items-center justify-content-between mb-4 row">
-                                            <h6 class="mb-0">Tabla de cargas</h6>
-                                        </div>
-                                    
-                                    <div class="table-responsive">
-                                        <table class="table text-start align-middle table-bordered table-hover mb-0">
-                                            <thead>
-                                                <tr class="text-dark">
-                                                    <th scope="col">Titulo</th>
-                                                    <th scope="col">Imagen</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>Cocina</td>
-                                                    <td><img src="testimonial-1.jpg"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Comedor</td>
-                                                    <td><img src="testimonial-2.jpg"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Dormitorio 1</td>
-                                                    <td><img src="user.jpg"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Cocina</td>
-                                                    <td><img src="testimonial-1.jpg"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Comedor</td>
-                                                    <td><img src="testimonial-2.jpg"></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Dormitorio 1</td>
-                                                    <td><img src="user.jpg"></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="inputPassword3" class="col-sm-3 col-form-label">Cantidad</label>
+                            <div class="col-sm-6"><input class="form-control" type="number" id="formFile"></div>
+                            
+                            <button type="button" class="btn btn-primary col-sm-3">Cargar</button>
+                        </div>
+                        
+                        <div class="container-fluid pt-4 px-4">
+                            <div class="bg-light text-center rounded p-4">
+                                
+                                    <div class="d-flex align-items-center justify-content-between mb-4 row">
+                                        <h6 class="mb-0">Tabla de cargas</h6>
                                     </div>
+                                
+                                <div class="table-responsive">
+                                    <table class="table text-start align-middle table-bordered table-hover mb-0">
+                                        <thead>
+                                            <tr class="text-dark">
+                                                <th scope="col">Titulo</th>
+                                                <th scope="col">Imagen</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Cocina</td>
+                                                <td><img src="testimonial-1.jpg"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Comedor</td>
+                                                <td><img src="testimonial-2.jpg"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Dormitorio 1</td>
+                                                <td><img src="user.jpg"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Cocina</td>
+                                                <td><img src="testimonial-1.jpg"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Comedor</td>
+                                                <td><img src="testimonial-2.jpg"></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Dormitorio 1</td>
+                                                <td><img src="user.jpg"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
                       
                 </div>
-
-                
                 <button type="submit" class="btn btn-primary col-sm-12 col-xl-12" form="crear-depto-form">Crear nuevo departamento</button> 
 
                     <!-- Footer Start -->
