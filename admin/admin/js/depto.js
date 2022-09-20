@@ -1,4 +1,7 @@
 var fotoDeptoList = [];
+var selectCondicionesDeUso;
+var condicionesDeUso = [];
+var listCondicionesAgregadas = []
 
 var form = document.getElementById('crear-depto-form');
 form.addEventListener('submit', async function(e){
@@ -62,11 +65,42 @@ var toBase64 = file => new Promise((resolve, reject) => {
 });
 
 //espera que la pagina este totalmente cargada y ejecuta la funcion
+//window hace referencia a la pagina (html),
 window.addEventListener('load', async (event) => {
+    // hace un get al endpoint indicado
     const respuesta = await fetch("http://localhost:8085/mantenedor/listar-condiciones");
-    console.log(respuesta.status)
-    console.log(respuesta.body)
-
-    const datos = await respuesta.json();
-    console.log(datos);
+    if(respuesta.status === 200) {
+        condicionesDeUso = await respuesta.json();
+        selectCondicionesDeUso = document.getElementById("select-condicion");
+        condicionesDeUso.forEach(condicion => {
+            var option = document.createElement("option");
+            option.value = condicion.idCondicion
+            option.text = condicion.tipoCondicionDeUso
+            selectCondicionesDeUso.add(option)
+        })
+    }else if(respuesta.status === 401) {
+        console.log("error 401")
+    } else if(respuesta.status === 404) {
+        console.log("error 404")
+    }
 });
+
+var btnCondicion = document.getElementById("btn-agregar-condicion");
+var listadoCondicionesSeleccionadas = document.getElementById("list-condiciones");
+btnCondicion.addEventListener('click', function(){
+
+    var value = selectCondicionesDeUso.value;
+    // guarda el texto seleccionado del select
+    var textoSeleccionado = selectCondicionesDeUso.options[selectCondicionesDeUso.selectedIndex].text;
+    text = "prohibdo fumar"
+    var divPadreCondicion = document.createElement("div")
+    var spanTituloCondicion = document.createElement("span")
+    
+    if(text !== "Seleccione condicion" && !listCondicionesAgregadas.includes(textoSeleccionado)) {
+        listCondicionesAgregadas.push(textoSeleccionado);
+        spanTituloCondicion.textContent = textoSeleccionado;
+        divPadreCondicion.appendChild(spanTituloCondicion)
+        divPadreCondicion.classList.add = "d-flex w-100 align-items-center justify-content-between";
+        listadoCondicionesSeleccionadas.appendChild(divPadreCondicion)
+    }    
+})
