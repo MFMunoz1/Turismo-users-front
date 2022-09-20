@@ -145,15 +145,15 @@
                 <div class="col-sm-12 col-xl-12">
                     <div class="bg-light rounded p-4">
                         <h6 class="mb-4">Nuevo Usuario</h6>
-                        <form>
+                        <form id="crear-usuario-form">
 
                             <div class="row mb-3">
                                 <label for="inputPassword3" class="col-sm-3 col-form-label">Tipo de usuario</label> <!-- Filtro de tipo de servicio -->
                                 <div class="col-sm-9">
-                                    <select class="form-select mb-3" aria-label="Default select example">
+                                    <select name="tipoUsuario" class="form-select mb-3" aria-label="Default select example">
                                         <option selected>Seleccione tipo de usuario</option>
-                                        <option value="1">Funcionario</option>
-                                        <option value="2">Administrador</option>
+                                        <option value="Funcionario">Funcionario</option>
+                                        <option value="Administrador">Administrador</option>
                                     </select>
                                     
                                 </div>
@@ -162,24 +162,24 @@
                             <div class="row mb-3">
                                 <label for="inputPassword3" class="col-sm-3 col-form-label">Nombre usuario</label> <!-- Variable de usuario -->
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="inputname" placeholder="Nombre Apellido">
+                                    <input name="nombreUsuario" type="text" class="form-control" id="inputname" placeholder="Nombre Apellido">
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="inputPassword3" class="col-sm-3 col-form-label">rut usuario</label> <!-- Variable de usuario -->
+                                <label for="inputPassword3" class="col-sm-3 col-form-label">Rut</label> <!-- Variable de usuario -->
                                 <div class="col-sm-9">
-                                    <input type="number" class="form-control" id="inputname" placeholder="12345678-9">
+                                    <input name="rutUsuario" type="text" class="form-control" id="inputname" placeholder="12345678-9">
                                 </div>
                             </div>
 
-                            <div class="row mb-3">
-                                <label for="inputPassword3" class="col-sm-3 col-form-label">Fecha nacimiento</label> <!-- Variable de usuario -->
+                            <!-- <div class="row mb-3">
+                                <label for="inputPassword3" class="col-sm-3 col-form-label">Fecha nacimiento</label> 
                                 <div class="col-sm-9">
                                     <input type="date" class="form-control" id="inputname" placeholder="dd/mm/aaaa">
                                 </div>
-                            </div>
-                            <div class="row mb-3">
-                                <legend class="col-form-label col-sm-2 pt-0">Genero</legend>  <!-- Variable de usuario -->
+                            </div> -->
+                            <!-- <div class="row mb-3">
+                                <legend class="col-form-label col-sm-2 pt-0">Genero</legend>  
                                 <div class="col-sm-10">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="gridRadios"
@@ -196,34 +196,34 @@
                                     </label>
                                 </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="row mb-3">
-                                <label for="inputPassword3" class="col-sm-3 col-form-label">Email empresa</label> <!-- Variable de usuario -->
+                                <label for="inputPassword3" class="col-sm-3 col-form-label">Email empresarial</label> <!-- Variable de usuario -->
                                 <div class="col-sm-9">
-                                    <input type="email" class="form-control" id="inputname" placeholder="name.lastname@turismoreal.cl">
+                                    <input name="emailUsuario" type="email" class="form-control" id="inputname" placeholder="name.lastname@turismoreal.cl">
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="inputPassword3" class="col-sm-3 col-form-label">Telefono</label> <!-- Variable de usuario -->
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="inputname" placeholder="987654321">
+                                    <input name="telefonoUsuario" type="text" class="form-control" id="inputname" placeholder="987654321">
                                 </div>
                             </div>
 
                             <div class="row mb-3">
-                                <label for="inputPassword3" class="col-sm-3 col-form-label">Contraseña provisoria</label> <!-- Variable de usuario -->
+                                <label for="inputPassword3" class="col-sm-3 col-form-label">Contraseña</label> <!-- Variable de usuario -->
+                                <div class="col-sm-9">
+                                    <input name="passwordUsuario" type="password" class="form-control" id="inputname" placeholder="password">
+                                </div>
+                            </div>
+                            <!-- <div class="row mb-3">
+                                <label for="inputPassword3" class="col-sm-3 col-form-label">Repetir contraseña</label>
                                 <div class="col-sm-9">
                                     <input type="password" class="form-control" id="inputname" placeholder="password">
                                 </div>
-                            </div>
-                            <div class="row mb-3">
-                                <label for="inputPassword3" class="col-sm-3 col-form-label">Repetir contraseña</label> <!-- Variable de usuario -->
-                                <div class="col-sm-9">
-                                    <input type="password" class="form-control" id="inputname" placeholder="password">
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <legend class="col-form-label col-sm-2 pt-0">Estado de la cuenta</legend> <!-- Variable de usuario -->
+                            </div> -->
+                            <!-- <div class="row mb-3">
+                                <legend class="col-form-label col-sm-2 pt-0">Estado de la cuenta</legend> 
                                 <div class="col-sm-10">
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="gridRadios"
@@ -240,13 +240,13 @@
                                     </label>
                                 </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </form>
                     </div>
                 </div>
                 
                 
-                <button type="submit" class="btn btn-primary">Crear nuevo usuario</button> 
+                <button type="submit" class="btn btn-primary" form="crear-usuario-form">Crear nuevo usuario</button> 
 
                     <!-- Footer Start -->
                     <div class="container-fluid pt-4 px-4">
@@ -293,6 +293,7 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script src="js/crear-usuario.js"></script>
 </body>
 
 </html>
