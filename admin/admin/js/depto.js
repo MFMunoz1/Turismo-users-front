@@ -44,7 +44,7 @@ var toBase64 = file => new Promise((resolve, reject) => {
 });
 
 
-//----------CONDICIONES DE
+//----------CONDICIONES DE USO-------------------------------------------------------
 //espera que la pagina este totalmente cargada y ejecuta la funcion
 //window hace referencia a la pagina (html),
 window.addEventListener('load', async (event) => {
@@ -163,3 +163,5 @@ btnCargarFoto.addEventListener('click', async function(){
     fotoDeptoList.push(fotoEnviar);
     console.log(fotoDeptoList)
 })
+
+
