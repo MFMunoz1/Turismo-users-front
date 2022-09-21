@@ -145,7 +145,7 @@
                 <div class="col-sm-12 col-xl-6">
                     <div class="bg-light rounded h-100 p-4">
                         <h6 class="mb-4">Servicio de departamento</h6>
-                        <form name="f1">
+                        <form id="servicioDeptoForm" name="f1">
                             <div class="row mb-3">
                                 <label class="col-sm-3 col-form-label">Accion</label> <!-- Filtro de tipo de accion -->
                                 <div class="col-sm-9">
@@ -162,28 +162,8 @@
                             <div class="row mb-3 listaserv">
                                 <label  class="col-sm-3 col-form-label">Servicio</label> <!-- lista de servicios -->
                                 <div class="col-sm-9">
-                                    <select class="form-select mb-3" aria-label="Default select example">
-                                        <option selected>Seleccione servicio</option>
-                                        <option value="1">01 Quincho</option>
-                                        <option value="2">02 Piscina privada</option>
-                                        <option value="3">03 Lavanderia</option>
-                                        <option value="4">04 Gimnasio</option>
-                                        <option value="5">05 Estacionamiento</option>
-                                        <option value="6">06 Bodega</option>
-                                        <option value="7">07 Patio trasero</option>
-                                        <option value="8">08 Parrilla</option>
-                                        <option value="9">09 Mirador</option>
-                                        <option value="10">10 Jacuzzi</option>
-                                        <option value="11">11 Wifi</option>
-                                        <option value="12">12 Aire acondicionado</option>
-                                        <option value="13">13 Detector de humo</option>
-                                        <option value="14">14 Entrada independiente</option>
-                                        <option value="15">15 Calefaccion</option>
-                                        <option value="16">16 Chimenea</option>
-                                        <option value="17">17 Lavadora</option>
-                                        <option value="18">18 Secador de pelo</option>
-                                        <option value="19">19 Tv</option>
-                                        <option value="20">20 Botiquin de primeros auxilios</option>
+                                    <select id="select-serviciosDepto" class="form-select mb-3" aria-label="Default select example">
+                                        
                                     </select>
                                 </div>
                             </div>
@@ -191,11 +171,16 @@
                             <div class="row mb-3 nombreserv" >
                                 <label class="col-sm-3 col-form-label">Nombre servicio</label> <!-- nombre servicio -->
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="inputname" placeholder="Nombre del nuevo servicio">
+                                    <input name="tipoServicioDepto" type="text" class="form-control" id="inputname" placeholder="Nombre del nuevo servicio">
                                 </div>
+                                <!-- name="tipoServicioDepto" -->
                             </div>       
                         </form>
-                        <button type="submit" class="btn btn-primary col-sm-12">Finalizar accion</button>
+                        <button type="submit" class="btn btn-primary col-sm-12" form="servicioDeptoForm">Agregar servicio a la lista</button>
+                        <br><br>
+                        <button id="btnEnviarLista" type="submit" class="btn btn-primary col-sm-12" form="servicioDeptoForm">Enviar lista</button>
+                        <br><br>
+                        <button id="btnEliminarServicioDepto" type="submit" class="btn btn-primary col-sm-12" form="servicioDeptoForm">Eliminar servicio</button>
                     </div>
                     
                 </div>
@@ -359,6 +344,7 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
     <script src="js/servicio.js"></script>
+    <script src="js/crearServicioDepto.js"></script>
 </body>
 
 </html>

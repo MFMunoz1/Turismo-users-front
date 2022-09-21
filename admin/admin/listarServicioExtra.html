@@ -150,7 +150,7 @@
                         <div class="d-flex align-items-center justify-content-between mb-4 row">
                             <h6 class="mb-4 ">Servicios extra</h6>
                             <div class="col-xl-3 col-md-3">
-                            <select class="form-select mb-3" aria-label="Default select example">
+                            <select id="selectServicioExtra" class="form-select mb-3" aria-label="Default select example">
                                 <option selected>Buscar por tipo</option>
                                 <option value="1">Tour</option>
                                 <option value="2">Transporte</option>
@@ -180,10 +180,10 @@
                                     <th scope="col">maximo personas</th>
                                     <th scope="col">Region</th>
                                     <th scope="col">Comuna</th>
-                                    <th scope="col">Accion</th>
+                                    <th scope="col">Descripción</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="data_tours">
                                 <!-- <tr>
                                     <td>01</td>
                                     <td>Lo mejor de valpo</td>
@@ -276,6 +276,24 @@
                                 </tr> -->
                             </tbody>
                         </table>
+
+                        <table class="table text-start align-middle table-bordered table-hover mb-0">
+                            <thead>
+                                <tr class="text-dark">
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Persona a cargo</th>
+                                    <th scope="col">maximo personas</th>
+                                    <th scope="col">Region</th>
+                                    <th scope="col">Comuna</th>
+                                    <th scope="col">Patente</th>
+                                    <th scope="col">Modelo</th>
+                                    <th scope="col">Marca</th>
+                                </tr>
+                            </thead>
+                            <tbody id="data_transportes">
+                                
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -322,6 +340,7 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script src="js/listarServiciosExtra.js"></script>
 </body>
 
 </html>
