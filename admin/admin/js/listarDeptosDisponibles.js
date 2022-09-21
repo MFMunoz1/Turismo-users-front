@@ -9,7 +9,7 @@ fetch(url)
             console.log(data);
             let body = "";
             for(let i = 0; i< data.length; i++){
-                if(data[i].estado == "Deshabilitado"){
+                if(data[i].estado == "Habilitado"){
                     body += `<tr><td>${data[i].idDepartamento}</td><td>${data[i].direccion}</td><td>${data[i].comuna}</td><td>${data[i].region}</td><td>${data[i].estado}</td></tr>`
                 }
             }

@@ -75,3 +75,20 @@ btnEliminarCondicion.addEventListener('click', ()=>{
  );
 
     });
+
+
+let url_condicionesUso = "http://localhost:8085/mantenedor/listar-condiciones";
+fetch(url_condicionesUso)
+    .then(response => response.json())
+    .then(data => mostrarData_condicionesUso(data))
+    .catch(error => console.log(error))
+    
+    
+        const mostrarData_condicionesUso = (data) =>{
+            console.log(data);
+            let body = ""
+            for(let i = 0; i< data.length; i++){
+                body += `<tr><td>${data[i].idCondicion}</td><td>${data[i].tipoCondicionDeUso}</td></tr>`
+            }
+            document.getElementById('data-condicionesDeUso').innerHTML = body
+        }

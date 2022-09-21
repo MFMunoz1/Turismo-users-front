@@ -78,5 +78,20 @@ btnEliminarServicioDepto.addEventListener('click', ()=>{
 
     });
 
+
+    let url_servicioDepto = "http://localhost:8085/mantenedor/listar-servicios-depto";
+    fetch(url_servicioDepto)
+        .then(response => response.json())
+        .then(data => mostrarData_servicioDepto(data))
+        .catch(error => console.log(error))
     
+    
+            const mostrarData_servicioDepto = (data) =>{
+                console.log(data);
+                let body = ""
+                for(let i = 0; i< data.length; i++){
+                    body += `<tr><td>${data[i].idServicioDepto}</td><td>${data[i].tipoServicioDepto}</td></tr>`
+                }
+                document.getElementById('data_serviciosDepto').innerHTML = body
+            }
     
