@@ -145,7 +145,7 @@
                 <div class="col-sm-12 col-xl-6">
                     <div class="bg-light rounded h-100 p-4">
                         <h6 class="mb-4">Condicion de uso</h6>
-                        <form name="f2">
+                        <form id="condicionesDeUsoForm" name="f2">
                             <div class="row mb-3">
                                 <label class="col-sm-3 col-form-label">Accion</label> <!-- Filtro de tipo de accion -->
                                 <div class="col-sm-9">
@@ -162,18 +162,8 @@
                             <div class="row mb-3 listacond">
                                 <label  class="col-sm-3 col-form-label">Condicion</label> <!-- lista de condiciones -->
                                 <div class="col-sm-9">
-                                    <select class="form-select mb-3" aria-label="Default select example">
-                                        <option selected>Seleccione condicion</option>
-                                        <option value="1">01 No se admiten mascotas</option>
-                                        <option value="2">02 No realizar fiestas</option>
-                                        <option value="3">03 No fumar</option>
-                                        <option value="4">04 No arrojar cosas a la piscina</option>
-                                        <option value="5">05 No estacionar en patio delantero</option>
-                                        <option value="6">06 No se admiten niños</option>
-                                        <option value="7">07 No causar destrozos</option>
-                                        <option value="8">08 No hacer fogatas</option>
-                                        <option value="9">09 Mantener la limpieza del lugar</option>
-                                        <option value="10">10 No traer visitas</option>
+                                    <select id="selectCondicionDeUso" class="form-select mb-3" aria-label="Default select example">
+                                        
                                     </select>
                                 </div>
                             </div>
@@ -181,11 +171,15 @@
                             <div class="row mb-3 nombrecond" >
                                 <label class="col-sm-3 col-form-label">Nombre condicion</label> <!-- nombre condicion -->
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="inputcond" placeholder="Nombre de la nueva condicion">
+                                    <input name="tipoCondicionDeUso" type="text" class="form-control" id="inputcond" placeholder="Nombre de la nueva condicion">
                                 </div>
                             </div>       
                         </form>
-                        <button type="submit" class="btn btn-primary col-sm-12">Finalizar accion</button>
+                        <button type="submit" class="btn btn-primary col-sm-12" form="condicionesDeUsoForm">Agregar condición</button>
+                        <br><br>
+                        <button id="btnEnviarLista" type="submit" class="btn btn-primary col-sm-12" form="condicionesDeUsoForm">Enviar lista</button>
+                        <br><br>
+                        <button id="btnEliminarCondicion" type="submit" class="btn btn-primary col-sm-12" form="condicionesDeUsoForm">Eliminar condición</button>
                     </div>
                     
                 </div>
@@ -349,6 +343,7 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
     <script src="js/condiciones.js"></script>
+    <script src="js/condicionesDeUsoCrud.js"></script>
 </body>
 
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en">                                             <!-- listar los departamentos existentes para modificar su disponibilidad -->
 
 <head>
     <meta charset="utf-8">
@@ -78,7 +78,7 @@
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h5 class="mb-0">Nombre Apellido</h5>
+                        <h6 class="mb-0">Nombre Apellido</h6>
                         <span>Admin</span>
                     </div>
                 </div>
@@ -141,23 +141,132 @@
         <!-- Content Start -->
         <div class="content w-100">
             
+            <!-- Recent Sales Start -->
+            
+
             <div class="container-fluid pt-4 px-4">
                 <div class="bg-light text-center rounded p-4">
-                    <h5 class="mb-0">Disponibilidad</h5>
+                    
+                        <div class="d-flex align-items-center justify-content-between mb-4 row">
+                            <h6 class="mb-0 col-xl-3 col-md-3">Departamentos</h6>
+                            <div class="col-xl-3 col-md-3 col-sm-4">
+                                <select class="form-select mb-3" aria-label="Default select example">
+                                    <option selected>Region</option>
+                                    <option value="1">region 1</option>
+                                    <option value="2">region 2</option>
+                                </select></div>
 
-                     <!-- Calender Start -->
-                    <div class="col-sm-12 col-md-12 col-xl-12">
-                        <div class="h-100 bg-light rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Calendario</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <div id="calender"></div>
+                            <div class="col-xl-3 col-md-3 col-sm-4">
+                                <select class="form-select mb-3" aria-label="Default select example">
+                                    <option selected>comuna</option>
+                                    <option value="1">comuna 1</option>
+                                    <option value="2">comuna 2</option>
+                                </select></div>
+                            <a href="" class="col-xl-3 col-md-3 col-sm-4">Mostrar todos</a>
                         </div>
-                    </div> <!-- Calender End -->    
+                    
+                    <div class="table-responsive">
+                        <table class="table text-start align-middle table-bordered table-hover mb-0">
+                            <thead>
+                                <tr class="text-dark">
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Direccion</th>
+                                    <th scope="col">Comuna</th>
+                                    <th scope="col">Region</th>
+                                    <th scope="col">Estado</th>
+                                    <th scope="col">Accion</th>
+                                </tr>
+                            </thead>
+                            <tbody id="data">
+                                <!-- <tr>
+                                    <td>01</td>
+                                    <td>Calle #123</td>
+                                    <td>Viña del Mar</td>
+                                    <td>Valparaiso</td>
+                                    <td>Habilitado</td>
+                                    <td><a class="btn btn-sm btn-primary" href="disponibilidad.html">Seleccionar</a></td>
+                                </tr>
+                                <tr>
+                                    <td>02</td>
+                                    <td>Calle #123</td>
+                                    <td>Providencia</td>
+                                    <td>Santiago</td>
+                                    <td>Habilitado</td>
+                                    <td><a class="btn btn-sm btn-primary" href="disponibilidad.html">Seleccionar</a></td>
+                                </tr>
+                                <tr>
+                                    <td>03</td>
+                                    <td>Calle #123</td>
+                                    <td>Puerto Montt</td>
+                                    <td>Los Lagos</td>
+                                    <td>Habilitado</td>
+                                    <td><a class="btn btn-sm btn-primary" href="disponibilidad.html">Seleccionar</a></td>
+                                </tr>
+                                <tr>
+                                    <td>04</td>
+                                    <td>Calle #123</td>
+                                    <td>La Serena</td>
+                                    <td>Coquimbo</td>
+                                    <td>Habilitado</td>
+                                    <td><a class="btn btn-sm btn-primary" href="disponibilidad.html">Seleccionar</a></td>
+                                </tr>
+                                <tr>
+                                    <td>05</td>
+                                    <td>Calle #123</td>
+                                    <td>Pucon</td>
+                                    <td>Araucania</td>
+                                    <td>Habilitado</td>
+                                    <td><a class="btn btn-sm btn-primary" href="disponibilidad.html">Seleccionar</a></td>
+                                </tr>
+                                <tr>
+                                    <td>06</td>
+                                    <td>Calle #123</td>
+                                    <td>Puerto Montt</td>
+                                    <td>Los Lagos</td>
+                                    <td>Habilitado</td>
+                                    <td><a class="btn btn-sm btn-primary" href="disponibilidad.html">Seleccionar</a></td>
+                                </tr>
+                                <tr>
+                                    <td>07</td>
+                                    <td>Calle #123</td>
+                                    <td>Puerto Montt</td>
+                                    <td>Los Lagos</td>
+                                    <td>Habilitado</td>
+                                    <td><a class="btn btn-sm btn-primary" href="disponibilidad.html">Seleccionar</a></td>
+                                </tr>
+                                <tr>
+                                    <td>08</td>
+                                    <td>Calle #123</td>
+                                    <td>Puerto Montt</td>
+                                    <td>Los Lagos</td>
+                                    <td>Habilitado</td>
+                                    <td><a class="btn btn-sm btn-primary" href="disponibilidad.html">Seleccionar</a></td>
+                                </tr>
+                                <tr>
+                                    <td>09</td>
+                                    <td>Calle #123</td>
+                                    <td>Puerto Montt</td>
+                                    <td>Los Lagos</td>
+                                    <td>Habilitado</td>
+                                    <td><a class="btn btn-sm btn-primary" href="disponibilidad.html">Seleccionar</a></td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>Calle #123</td>
+                                    <td>Puerto Montt</td>
+                                    <td>Los Lagos</td>
+                                    <td>Habilitado</td>
+                                    <td><a class="btn btn-sm btn-primary" href="disponibilidad.html">Seleccionar</a></td>
+                                </tr> -->
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-           
+            <!-- Recent Sales End -->
+
+
+            
 
 
             <!-- Footer Start -->
@@ -197,6 +306,7 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script src="js/listarDeptosDisponibles.js"></script>
 </body>
 
 </html>
