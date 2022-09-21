@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en">                            <!-------------------------------------- CREAR SERVICIO DE DEPARTAMENTO -------------------------------------->
 
 <head>
     <meta charset="utf-8">
@@ -77,7 +77,7 @@
                         <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
                     </div>
                     <div class="ms-3">
-                        <h5 class="mb-0">Nombre Apellido</h5>
+                        <h6 class="mb-0">Nombre Apellido</h6>
                         <span>Admin</span>
                     </div>
                 </div>
@@ -140,113 +140,171 @@
     <!-- Content Start -->
         <div class="container-fluid pt-4 px-4">
             <div class="row g-4">
-
-                <!------------------------------------------- Formulario servicio extra ----------------------------------------------------->
-                <div class="col-sm-12 col-xl-12">
-                    <div class="bg-light rounded p-4">
-                        <h6 class="mb-4">Nuevo servicio extra</h6>
-                        <form id="formularioCrearServicioExtra" name="fservextra">
-
+                <!-------------------------------------- Formulario condiciones-------------------------------------->
+                
+                <div class="col-sm-12 col-xl-6">
+                    <div class="bg-light rounded h-100 p-4">
+                        <h6 class="mb-4">Condicion de uso</h6>
+                        <form name="f2">
                             <div class="row mb-3">
-                                <label for="inputPassword3" class="col-sm-3 col-form-label">Tipo de servicio extra</label> <!-- Filtro de tipo de servicio -->
+                                <label class="col-sm-3 col-form-label">Accion</label> <!-- Filtro de tipo de accion -->
                                 <div class="col-sm-9">
-                                    <select id="selectServicioExtra" class="form-select mb-3 tiposervextra" aria-label="Default select example" name="tservextra" onchange="elementos_servicioextra()">
-                                        <option value="0" selected>Seleccione tipo de servicio</option>
-                                        <option value="Tour">Tour</option>
-                                        <option value="Transporte">Transporte</option>
+                                    <select class="form-select mb-3" aria-label="Default select example" name="accioncond" onchange="elementos_condicion()">
+                                        <option value="0" selected>Seleccione accion a realizar</option>
+                                        <option value="1" id="crearserv" >Crear condicion</option>
+                                        <option value="2" id="modserv">Modificar condicion</option>
+                                        <option value="3" id="eliminarserv">Eliminar condicion</option>
                                     </select>
                                     
                                 </div>
                             </div>
 
-                            <div class="row mb-3 tipotour">
-                                <label for="inputPassword3" class="col-sm-3 col-form-label">Titulo tour</label> <!-- Variable de tour -->
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="inputname">
-                                </div>
-                            </div>
-                            <div class="row mb-3 tipotour">
-                                <label for="inputPassword3" class="col-sm-3 col-form-label">cantidad de personas max.</label> <!-- Variable de tour -->
-                                <div class="col-sm-9">
-                                    <input type="number" class="form-control" id="inputname">
-                                </div>
-                            </div>
-                            <div class="row mb-3 tipo tour">
-                                <label for="inputPassword3" class="col-sm-3 col-form-label">Descripcion</label> <!-- Variable de tour -->
-                                <div class="col-sm-9">
-                                    <textarea class="form-control" id="floatingTextarea" style="height: 150px;"></textarea>
-                                </div>
-                            </div>
-                            <div class="row mb-3 ">
-                                <label for="inputPassword3" class="col-sm-3 col-form-label">Region</label> <!-- Variable de tour y transporte -->
+                            <div class="row mb-3 listacond">
+                                <label  class="col-sm-3 col-form-label">Condicion</label> <!-- lista de condiciones -->
                                 <div class="col-sm-9">
                                     <select class="form-select mb-3" aria-label="Default select example">
-                                        <option selected>Seleccione region</option>
-                                        <option value="1">Valparaiso</option>
-                                        <option value="2">Metropolitana</option>
-                                        <option value="3">Los Lagos</option>
-                                    </select>
-                                    
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <label for="inputPassword3" class="col-sm-3 col-form-label">Comuna</label> <!-- Variable de tour y transporte -->
-                                <div class="col-sm-9">
-                                    <select class="form-select mb-3" aria-label="Default select example">
-                                        <option selected>Seleccione comuna</option>
-                                        <option value="1">Santiago</option>
-                                        <option value="2">Providencia</option>
-                                        <option value="3">San Miguel</option>
+                                        <option selected>Seleccione condicion</option>
+                                        <option value="1">01 No se admiten mascotas</option>
+                                        <option value="2">02 No realizar fiestas</option>
+                                        <option value="3">03 No fumar</option>
+                                        <option value="4">04 No arrojar cosas a la piscina</option>
+                                        <option value="5">05 No estacionar en patio delantero</option>
+                                        <option value="6">06 No se admiten niños</option>
+                                        <option value="7">07 No causar destrozos</option>
+                                        <option value="8">08 No hacer fogatas</option>
+                                        <option value="9">09 Mantener la limpieza del lugar</option>
+                                        <option value="10">10 No traer visitas</option>
                                     </select>
                                 </div>
                             </div>
-                            <div class="row mb-3">
-                                <label for="inputPassword3" class="col-sm-3 col-form-label">Persona a cargo</label> <!-- Variable de tour y transporte -->
+
+                            <div class="row mb-3 nombrecond" >
+                                <label class="col-sm-3 col-form-label">Nombre condicion</label> <!-- nombre condicion -->
                                 <div class="col-sm-9">
-                                    <input type="number" class="form-control" id="inputname">
+                                    <input type="text" class="form-control" id="inputcond" placeholder="Nombre de la nueva condicion">
                                 </div>
-                            </div>
-                            <div class="row mb-3 tipotransp">
-                                <label for="inputEmail3" class="col-sm-3 col-form-label">Modelo vehiculo</label> <!-- Variable de transporte -->
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="inputdirec">
-                                </div>
-                            </div>
-                            <div class="row mb-3 tipotransp">
-                                <label for="inputPassword3" class="col-sm-3 col-form-label">Marca vehiculo</label> <!-- Variable de transporte -->
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="inputname">
-                                </div>
-                            </div>
-                             <div class="row mb-3 tipotransp">
-                                <label for="inputEmail3" class="col-sm-3 col-form-label">Patente vehiculo</label> <!-- Variable de transporte -->
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="inputdirec">
-                                </div>
-                            </div>
-                            <div class="row mb-3 tipotransp">
-                                <label for="inputPassword3" class="col-sm-3 col-form-label">Capacidad de pasajeros</label> <!-- Variable de transporte -->
-                                <div class="col-sm-9">
-                                    <input type="number" class="form-control" id="inputname">
-                                </div>
-                            </div>
-                           
-                            <div class="row mb-3">
-                                <label for="inputPassword3" class="col-sm-3 col-form-label">Valor servicio extra</label> <!-- Variable de tour y transporte -->
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="inputname" >
-                                </div>
-                            </div>
+                            </div>       
                         </form>
+                        <button type="submit" class="btn btn-primary col-sm-12">Finalizar accion</button>
                     </div>
+                    
                 </div>
                 
-                
-                <button type="submit" class="btn btn-primary">Crear servicio extra</button> 
+                <!-------------------------------------- FIN FORMULARIO -------------------------------------->
 
+                <!-- Listado de servicios -->
+                <div class="col-sm-12 col-xl-6 ">
+                    <div class="bg-light rounded p-4">
+                        <h6 class="mb-4">Listado de condiciones de uso</h6>
+                        <div class="row mb-3">
+                            <label class="col-xl-3 col-md-3 col-sm-4 col-form-label">Ordenar por</label> <!-- Filtro de tipo de servicio -->
+                            <div class="col-xl-6 col-md-6 col-sm-4">
+                                <select class="form-select mb-3" aria-label="Default select example">
+                                    <option value="1" selected>id</option>
+                                    <option value="2">a - z</option>
+                                </select>
+                            </div>
+                            <a href="" class="col-xl-3 col-md-3 col-sm-4" >Actualizar</a>
+                        </div>
+                        
+                        <div class="table-responsive tablescroll">
+                            <table class="table text-start align-middle table-bordered table-hover mb-0">
+                                <thead>
+                                    <tr class="text-dark">
+                                        <th scope="col">Id</th>
+                                        <th scope="col">Nombre</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>01</td>
+                                        <td>Quincho</td>
+                                    </tr>
+                                    <tr>
+                                        <td>02</td>
+                                        <td>Piscina privada</td>
+                                    </tr>
+                                    <tr>
+                                        <td>03</td>
+                                        <td>Lavanderia</td>
+                                    </tr>
+                                    <tr>
+                                        <td>04</td>
+                                        <td>Gimnasio</td>
+                                    </tr>
+                                    <tr>
+                                        <td>05</td>
+                                        <td>Estacionamiento</td>
+                                    </tr>
+                                    <tr>
+                                        <td>06</td>
+                                        <td>Bodega</td>
+                                    </tr>
+                                    <tr>
+                                        <td>07</td>
+                                        <td>Patio trasero</td>
+                                    </tr>
+                                    <tr>
+                                        <td>08</td>
+                                        <td>Parrilla</td>
+                                    </tr>
+                                    <tr>
+                                        <td>09</td>
+                                        <td>Mirador</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>Jacuzzi</td>
+                                    </tr>
+                                    <tr>
+                                        <td>11</td>
+                                        <td>Wifi</td>
+                                    </tr>
+                                    <tr>
+                                        <td>12</td>
+                                        <td>Aire acondicionado</td>
+                                    </tr>
+                                    <tr>
+                                        <td>13</td>
+                                        <td>Detector de humo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>14</td>
+                                        <td>Entrada independiente</td>
+                                    </tr>
+                                    <tr>
+                                        <td>15</td>
+                                        <td>Calefaccion</td>
+                                    </tr>
+                                    <tr>
+                                        <td>16</td>
+                                        <td>Chimenea</td>
+                                    </tr>
+                                    <tr>
+                                        <td>17</td>
+                                        <td>Lavadora</td>
+                                    </tr>
+                                    <tr>
+                                        <td>18</td>
+                                        <td>Secador de pelo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>19</td>
+                                        <td>Tv</td>
+                                    </tr>
+                                    <tr>
+                                        <td>20</td>
+                                        <td>Botiquin de primeros auxilio</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>    
+                </div>
+                
                     <!-- Footer Start -->
-                    <div class="container-fluid pt-4 px-4">
-                        <div class="bg-light rounded-top p-4">
+                    <div class="container-fluid">
+                        <div class="bg-light rounded p-4">
                             <div class="row">
                                 <div class="col-12 col-sm-6 text-center text-sm-start">
                                     &copy; <a href="#">Turismo Real</a>, Todos los derechos reservados. 
@@ -286,11 +344,11 @@
     <script src="lib/tempusdominus/js/moment.min.js"></script>
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-    <script src="js/servicioextra.js"></script>
+    <script src="js/condiciones.js"></script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-    <script src="js/CrearServicioExtra.js"></script>
+    <script src="js/condiciones.js"></script>
 </body>
 
 </html>

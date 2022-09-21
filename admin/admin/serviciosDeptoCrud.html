@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en">                            <!-------------------------------------- CREAR SERVICIO DE DEPARTAMENTO -------------------------------------->
 
 <head>
     <meta charset="utf-8">
@@ -140,123 +140,181 @@
     <!-- Content Start -->
         <div class="container-fluid pt-4 px-4">
             <div class="row g-4">
-
+                <!-------------------------------------- Formulario creacion nuevo servicio-------------------------------------->
+                
                 <div class="col-sm-12 col-xl-6">
+                    <div class="bg-light rounded h-100 p-4">
+                        <h6 class="mb-4">Servicio de departamento</h6>
+                        <form name="f1">
+                            <div class="row mb-3">
+                                <label class="col-sm-3 col-form-label">Accion</label> <!-- Filtro de tipo de accion -->
+                                <div class="col-sm-9">
+                                    <select class="form-select mb-3" aria-label="Default select example" name="accionserv" onchange="elementos_servicio()">
+                                        <option value="0" selected>Seleccione accion a realizar</option>
+                                        <option value="1" id="crearserv" >Crear servicio</option>
+                                        <option value="2" id="modserv">Modificar servicio</option>
+                                        <option value="3" id="eliminarserv">Eliminar servicio</option>
+                                    </select>
+                                    
+                                </div>
+                            </div>
+
+                            <div class="row mb-3 listaserv">
+                                <label  class="col-sm-3 col-form-label">Servicio</label> <!-- lista de servicios -->
+                                <div class="col-sm-9">
+                                    <select class="form-select mb-3" aria-label="Default select example">
+                                        <option selected>Seleccione servicio</option>
+                                        <option value="1">01 Quincho</option>
+                                        <option value="2">02 Piscina privada</option>
+                                        <option value="3">03 Lavanderia</option>
+                                        <option value="4">04 Gimnasio</option>
+                                        <option value="5">05 Estacionamiento</option>
+                                        <option value="6">06 Bodega</option>
+                                        <option value="7">07 Patio trasero</option>
+                                        <option value="8">08 Parrilla</option>
+                                        <option value="9">09 Mirador</option>
+                                        <option value="10">10 Jacuzzi</option>
+                                        <option value="11">11 Wifi</option>
+                                        <option value="12">12 Aire acondicionado</option>
+                                        <option value="13">13 Detector de humo</option>
+                                        <option value="14">14 Entrada independiente</option>
+                                        <option value="15">15 Calefaccion</option>
+                                        <option value="16">16 Chimenea</option>
+                                        <option value="17">17 Lavadora</option>
+                                        <option value="18">18 Secador de pelo</option>
+                                        <option value="19">19 Tv</option>
+                                        <option value="20">20 Botiquin de primeros auxilios</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3 nombreserv" >
+                                <label class="col-sm-3 col-form-label">Nombre servicio</label> <!-- nombre servicio -->
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="inputname" placeholder="Nombre del nuevo servicio">
+                                </div>
+                            </div>       
+                        </form>
+                        <button type="submit" class="btn btn-primary col-sm-12">Finalizar accion</button>
+                    </div>
+                    
+                </div>
+                
+                <!-------------------------------------- FIN FORMULARIO -------------------------------------->
+
+                <!-- Listado de servicios -->
+                <div class="col-sm-12 col-xl-6 ">
                     <div class="bg-light rounded p-4">
                         <h6 class="mb-4">Listado de servicios</h6>
                         <div class="row mb-3">
-                            <label for="inputPassword3" class="col-sm-3 col-form-label">Ordenar por</label> <!-- Filtro de tipo de servicio -->
-                            <div class="col-sm-9">
+                            <label class="col-xl-3 col-md-3 col-sm-4 col-form-label">Ordenar por</label> <!-- Filtro de tipo de servicio -->
+                            <div class="col-xl-6 col-md-6 col-sm-4">
                                 <select class="form-select mb-3" aria-label="Default select example">
-                                    <option selected>id</option>
-                                    <option value="1">a - z</option>
-                                    <option value="2">z - a</option>
+                                    <option value="1" selected>id</option>
+                                    <option value="2">a - z</option>
                                 </select>
-                                
                             </div>
+                            <a href="" class="col-xl-3 col-md-3 col-sm-4" >Actualizar</a>
                         </div>
-
+                        
+                        <div class="table-responsive tablescroll">
+                            <table class="table text-start align-middle table-bordered table-hover mb-0">
+                                <thead>
+                                    <tr class="text-dark">
+                                        <th scope="col">Id</th>
+                                        <th scope="col">Nombre</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>01</td>
+                                        <td>Quincho</td>
+                                    </tr>
+                                    <tr>
+                                        <td>02</td>
+                                        <td>Piscina privada</td>
+                                    </tr>
+                                    <tr>
+                                        <td>03</td>
+                                        <td>Lavanderia</td>
+                                    </tr>
+                                    <tr>
+                                        <td>04</td>
+                                        <td>Gimnasio</td>
+                                    </tr>
+                                    <tr>
+                                        <td>05</td>
+                                        <td>Estacionamiento</td>
+                                    </tr>
+                                    <tr>
+                                        <td>06</td>
+                                        <td>Bodega</td>
+                                    </tr>
+                                    <tr>
+                                        <td>07</td>
+                                        <td>Patio trasero</td>
+                                    </tr>
+                                    <tr>
+                                        <td>08</td>
+                                        <td>Parrilla</td>
+                                    </tr>
+                                    <tr>
+                                        <td>09</td>
+                                        <td>Mirador</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>Jacuzzi</td>
+                                    </tr>
+                                    <tr>
+                                        <td>11</td>
+                                        <td>Wifi</td>
+                                    </tr>
+                                    <tr>
+                                        <td>12</td>
+                                        <td>Aire acondicionado</td>
+                                    </tr>
+                                    <tr>
+                                        <td>13</td>
+                                        <td>Detector de humo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>14</td>
+                                        <td>Entrada independiente</td>
+                                    </tr>
+                                    <tr>
+                                        <td>15</td>
+                                        <td>Calefaccion</td>
+                                    </tr>
+                                    <tr>
+                                        <td>16</td>
+                                        <td>Chimenea</td>
+                                    </tr>
+                                    <tr>
+                                        <td>17</td>
+                                        <td>Lavadora</td>
+                                    </tr>
+                                    <tr>
+                                        <td>18</td>
+                                        <td>Secador de pelo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>19</td>
+                                        <td>Tv</td>
+                                    </tr>
+                                    <tr>
+                                        <td>20</td>
+                                        <td>Botiquin de primeros auxilio</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>    
                 </div>
                 
-                <div class="col-sm-12 col-xl-6">
-                    <div class="bg-light rounded p-4">
-                        <h6 class="mb-4">Nuevo servicio</h6>
-                        <form>
-
-                            <div class="row mb-3">
-                                <label for="inputPassword3" class="col-sm-3 col-form-label">Tipo de servicio extra</label> <!-- Filtro de tipo de servicio -->
-                                <div class="col-sm-9">
-                                    <select class="form-select mb-3" aria-label="Default select example">
-                                        <option selected>Seleccione tipo de servicio</option>
-                                        <option value="1">Tour</option>
-                                        <option value="2">Transporte</option>
-                                    </select>
-                                    
-                                </div>
-                            </div>
-
-                            <div class="row mb-3">
-                                <label for="inputPassword3" class="col-sm-3 col-form-label">Titulo tour</label> <!-- Variable de tour -->
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="inputname">
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <label for="inputPassword3" class="col-sm-3 col-form-label">maximo personas</label> <!-- Variable de tour -->
-                                <div class="col-sm-9">
-                                    <input type="number" class="form-control" id="inputname">
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <label for="inputPassword3" class="col-sm-3 col-form-label">Descripcion</label> <!-- Variable de tour -->
-                                <div class="col-sm-9">
-                                    <textarea class="form-control" id="floatingTextarea" style="height: 150px;"></textarea>
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <label for="inputPassword3" class="col-sm-3 col-form-label">Region</label> <!-- Variable de tour y transporte -->
-                                <div class="col-sm-9">
-                                    <select class="form-select mb-3" aria-label="Default select example">
-                                        <option selected>Seleccione region</option>
-                                        <option value="1">Valparaiso</option>
-                                        <option value="2">Metropolitana</option>
-                                        <option value="3">Los Lagos</option>
-                                    </select>
-                                    
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <label for="inputPassword3" class="col-sm-3 col-form-label">Comuna</label> <!-- Variable de tour y transporte -->
-                                <div class="col-sm-9">
-                                    <select class="form-select mb-3" aria-label="Default select example">
-                                        <option selected>Seleccione comuna</option>
-                                        <option value="1">Santiago</option>
-                                        <option value="2">Providencia</option>
-                                        <option value="3">San Miguel</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <label for="inputPassword3" class="col-sm-3 col-form-label">Persona a cargo</label> <!-- Variable de tour y transporte -->
-                                <div class="col-sm-9">
-                                    <input type="number" class="form-control" id="inputname">
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <label for="inputEmail3" class="col-sm-3 col-form-label">Modelo auto</label> <!-- Variable de transporte -->
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="inputdirec">
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <label for="inputPassword3" class="col-sm-3 col-form-label">Marca</label> <!-- Variable de transporte -->
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="inputname">
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <label for="inputPassword3" class="col-sm-3 col-form-label">capacidad pasajeros</label> <!-- Variable de transporte -->
-                                <div class="col-sm-9">
-                                    <input type="number" class="form-control" id="inputname">
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <label for="inputEmail3" class="col-sm-3 col-form-label">Patente</label> <!-- Variable de transporte -->
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="inputdirec">
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                
-                
-                <button type="submit" class="btn btn-primary">Crear servicio extra</button> 
-
                     <!-- Footer Start -->
-                    <div class="container-fluid pt-4 px-4">
-                        <div class="bg-light rounded-top p-4">
+                    <div class="container-fluid">
+                        <div class="bg-light rounded p-4">
                             <div class="row">
                                 <div class="col-12 col-sm-6 text-center text-sm-start">
                                     &copy; <a href="#">Turismo Real</a>, Todos los derechos reservados. 
@@ -296,9 +354,11 @@
     <script src="lib/tempusdominus/js/moment.min.js"></script>
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="js/servicio.js"></script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script src="js/servicio.js"></script>
 </body>
 
 </html>
