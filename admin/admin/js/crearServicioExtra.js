@@ -2,11 +2,11 @@ var selectTipoServicioExtra;
 selectTipoServicioExtra= document.getElementById('selectServicioExtra');
 
 console.log(selectTipoServicioExtra.text);
-var IdServicioExtra = selectTipoServicioExtra.value;
+// var IdServicioExtra = selectTipoServicioExtra.value;
 
 var form = document.getElementById('formularioCrearServicioExtra');
 
-if(IdServicioExtra.value =="Tour" ){
+if(selectTipoServicioExtra.value =="1" ){
     form.addEventListener('submit', async function(e){
         e.preventDefault();
         var formData = new FormData(form);
@@ -34,7 +34,7 @@ if(IdServicioExtra.value =="Tour" ){
     });
 }
 
-else if(IdServicioExtra.value =="Transporte" ){
+else if(selectTipoServicioExtra.value =="2" ){
     form.addEventListener('submit', async function(e){
         e.preventDefault();
         var formData = new FormData(form);
