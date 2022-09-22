@@ -11,7 +11,7 @@ fetch(url)
             let body = ""
             for(let i = 0; i< data.length; i++){
                 body += `<tr><td value=${data[i].idDepartamento}>${data[i].idDepartamento}</td><td>${data[i].direccion}</td><td>${data[i].comuna}</td><td>${data[i].region}</td><td>${data[i].estado}</td>
-                <td><button class="btn btn-primary col-sm-12">Modificar</button></td>
+                <td><a class="btn btn-sm btn-primary" href="actualizarDeptoFormulario.html">Actualizar</a></td>
                 <td><button class="btn btn-danger col-sm-12" name="delete">Eliminar</button></td></tr>`
             }
             document.getElementById('data').innerHTML = body

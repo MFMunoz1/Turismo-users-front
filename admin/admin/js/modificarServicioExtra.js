@@ -32,3 +32,22 @@ fetch(url_transportes)
                     }
                     document.getElementById('servicioTransportes').innerHTML = body
             }
+
+
+// document.getElementById("data").addEventListener('click', (e)=>{
+//         console.log()
+//         var idDepto = e.target.parentElement.parentElement.firstChild.textContent
+//         var ruta = "http://localhost:8085/departamento/eliminar-depto?id_depto=" + idDepto;
+//         fetch(ruta, {
+//         method: "DELETE",
+//         mode: "cors",
+//         headers: {
+//             'Access-Control-Allow-Origin': '*',
+//             "Content-Type": "application/json",
+//             "Accept": "application/json"
+//             }
+//         }).then(
+//             e.target.parentElement.parentElement.remove()
+//             )
+            
+//         })

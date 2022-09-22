@@ -84,16 +84,15 @@
                     </div>
                 </div>
                 <div class="navbar-nav">
-                    <a href="index.html" class="nav-item nav-link active"><i class="fa fa-chart-bar me-2"></i>Estadisticas</a>
-                    <a href="listadeptodisp.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Servicios depto</a>
-                    <a href="listadeptodisp.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Condiciones de usuario</a>
+                    <a href="index.html" class="nav-item nav-link "><i class="fa fa-chart-bar me-2"></i>Estadisticas</a>
                     <div class="nav-item dropdown ">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-th me-2"></i>Departamentos</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="crear depto.html" class="dropdown-item">Crear departamento</a>
-                            <a href="actualizar depto.html" class="dropdown-item">Modificar departamento</a>
-                            <a href="Eliminar depto.html" class="dropdown-item">Eliminar departamento</a>
-                            <a href="listar depto.html" class="dropdown-item">Listar departamentos</a>
+                            <a href="crearDepto.html" class="dropdown-item active">Crear departamento</a>
+                            <a href="actualizarEliminarDepto.html" class="dropdown-item">Modificar/ Eliminar departamento</a>
+                            <!-- <a href="Eliminar depto.html" class="dropdown-item">Eliminar departamento</a> -->
+                            <a href="listarDepto.html" class="dropdown-item">Listar departamentos</a>
+                            <a href="listarDeptosDisponibles.html" class="dropdown-item">Listar departamentos disponibles</a>
                         </div>
                     </div>
                     <div class="nav-item dropdown ">
@@ -104,28 +103,45 @@
                             <a href="element.html" class="dropdown-item">Eliminar cliente</a>
                         </div>
                     </div>
-                    <a href="listadeptodisp.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Disponibilidad</a>
-                    <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Mantencion</a>
-                    <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Invertario</a>
                     <div class="nav-item dropdown ">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-th me-2"></i>Usuarios</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-th me-2"></i>Usuarios sistema</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="button.html" class="dropdown-item">Crear usuario</a>
-                            <a href="typography.html" class="dropdown-item">Modificar usuario</a>
-                            <a href="element.html" class="dropdown-item">Eliminar usuario</a>
-                            <a href="listar usuario.html" class="dropdown-item">Listar usuarios</a>
+                            <a href="CrearUsuario.html" class="dropdown-item">Crear usuario sistema</a>
+                            <!-- <a href="typography.html" class="dropdown-item">Modificar usuario sistema</a> -->
+                            <a href="listarUsuario.html" class="dropdown-item">Listar usuario sistema</a>
                         </div>
                     </div>
+                    <div class="nav-item dropdown ">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-table me-2"></i>Disponibilidad</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="button.html" class="dropdown-item">Crear disponibilidad</a>
+                            <a href="typography.html" class="dropdown-item">Modificar departamento</a>
+                            <a href="element.html" class="dropdown-item">Eliminar departamento</a>
+                        </div>
+                    </div>
+                    <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Mantencion</a>
+                    <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Invertario</a>
+                   <!--  -->
                     <div class="nav-item dropdown ">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-th me-2"></i>Servicios Extra</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="Crear servicio extra.html" class="dropdown-item">Crear Servicio Extra</a>
-                            <a href="modificar servextra.html" class="dropdown-item">Modificar Servicio Extra</a>
-                            <a href="eliminar servextra.html" class="dropdown-item">Eliminar Servicio Extra</a>
-                            <a href="lista servextra.html" class="dropdown-item">Listar servicios extra</a>
+                            <a href="CrearServicioExtra.html" class="dropdown-item">Crear Servicio Extra</a>
+                            <a href="modificarServicioExtra.html" class="dropdown-item">Modificar Servicio Extra</a>
+                            <a href="eliminarServicioExtra.html" class="dropdown-item">Eliminar Servicio Extra</a>
                         </div>
                     </div>
-                    
+                    <div class="nav-item dropdown ">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-th me-2"></i>Servicios Depto</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="serviciosDeptoCrud.html" class="dropdown-item">Gestor de servicios depto</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown ">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-th me-2"></i>Condiciones de uso</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="condicionesdeUsoCrud.html" class="dropdown-item">Gestor de condiciones de uso</a>
+                        </div>
+                    </div>
                     <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Planificar transporte</a>
                     <a href="widget.html" class="nav-item nav-link"><i class="fa fa-file-alt me-2"></i>Informe Reservas</a>
                     <a href="form.html" class="nav-item nav-link"><i class="fa fa-hashtag me-2"></i>Autenticar usuario</a>
