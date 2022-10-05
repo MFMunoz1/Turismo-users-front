@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Turismo Real - Crear Departamento</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Navbar Start -->
+            <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 w-100">
+                <a href="actualizarEliminarDepto.html" class="navbar-brand me-2">
+                    <h2 class="text-primary mb-0">Turismo Real</h2>
+                </a>
+                <a href="#" id="sidebar-toggler" class="sidebar-toggler">
+                    <i class="fa fa-bars"></i>
+                </a>
+                
+            </nav>
+    <!-- Navbar End -->
+    <div class="container bg-white d-flex p-0 w-100">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Cargando...</span>
+            </div>
+        </div>
+    <!-- Spinner End -->
+
+    <div data-include="menubar.html"></div>
+
+    <!-- Content Start -->
+        <div class="container-fluid pt-4 px-4" onclick="cerrarNav()">
+            <div class="row g-4">
+
+                <!------------------------------------------- Formulario servicio extra ----------------------------------------------------->
+                <div class="col-sm-12 col-xl-6">
+                    <div class="bg-light rounded p-4">
+                        <h6 class="mb-4">Nuevo servicio extra</h6>
+                        <form id="formularioCrearServicioExtra" name="fservextra">
+
+                            <div class="row mb-3">
+                                <label for="inputPassword3" class="col-sm-3 col-form-label">Tipo de servicio extra</label> <!-- Filtro de tipo de servicio -->
+                                <div class="col-sm-9">
+                                    <select id="selectServicioExtra" class="form-select mb-3 tiposervextra" aria-label="Default select example" name="tservextra" onchange="elementos_servicioextra()">
+                                        <option value="0" selected>Seleccione tipo de servicio</option>
+                                        <option value="1">Tour</option>
+                                        <option value="2">Transporte</option>
+                                    </select>
+                                    
+                                </div>
+                            </div>
+
+                            <div class="row mb-3 ">
+                                <label for="inputPassword3" class="col-sm-3 col-form-label">Región</label> <!-- Variable de tour y transporte -->
+                                <div class="col-sm-9">
+                                    <select name="region" id="select-region" onchange="cargarComunas()" class="form-select mb-3" aria-label="Default select example">
+                                        <option value="Seleccione la región" selected>Seleccione la región</option>
+                                    </select>
+                                    
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputPassword3" class="col-sm-3 col-form-label">Comuna</label> <!-- Variable de tour y transporte -->
+                                <div class="col-sm-9">
+                                    <select name="comuna" id="select-comuna" class="form-select mb-3" aria-label="Default select example">
+                                        <option value="Seleccione la comuna" selected>Seleccione la comuna</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputPassword3" class="col-sm-3 col-form-label">Persona a cargo</label> <!-- Variable de tour y transporte -->
+                                <div class="col-sm-9">
+                                    <input name="personaACargo" type="text" class="form-control" id="inputname" onkeypress="txNombres()" maxlength=30>
+                                </div>
+                            </div>
+                            <div class="row mb-3 tipotour">
+                                <label for="inputPassword3" class="col-sm-3 col-form-label">Titulo tour</label> <!-- Variable de tour -->
+                                <div class="col-sm-9">
+                                    <input name="tituloTour" type="text" class="form-control" id="inputname" maxlength="30">
+                                </div>
+                            </div>
+                            <div class="row mb-3 tipotour">
+                                <label for="inputPassword3" class="col-sm-3 col-form-label">cantidad de personas max.</label> <!-- Variable de tour -->
+                                <div class="col-sm-9">
+                                    <input name="cantidadPersonasMax" type="text" class="form-control" id="inputname" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="2" >
+                                </div>
+                            </div>
+                            <div class="row mb-3 tipotour">
+                                <label for="inputPassword3" class="col-sm-3 col-form-label">Descripcion</label> <!-- Variable de tour -->
+                                <div class="col-sm-9">
+                                    <textarea name="descripcionTour" class="form-control" id="floatingTextarea" style="height: 150px;" maxlength="50"></textarea>
+                                </div>
+                            </div>
+                            <div class="row mb-3 tipotour">
+                                <label for="inputPassword3" class="col-sm-3 col-form-label">Valor servicio extra</label > <!-- Variable de tour y transporte -->
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="valorTour" form="formularioCrearServicioExtra" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="6">
+                                </div>
+                            </div>
+                    </div>
+                </div>
+
+                <!------------------------------------------- IMAGEN ----------------------------------------------------->
+                <div class="col-sm-12 col-xl-6">
+                    <div class="bg-light rounded p-4">
+                        <div class="row mb-3 tipotransp">
+                            <label for="inputEmail3" class="col-sm-3 col-form-label">Modelo vehiculo</label> <!-- Variable de transporte -->
+                            <div class="col-sm-9">
+                                <input name="modelo" type="text" class="form-control" id="inputdirec" maxlength="25">
+                            </div>
+                        </div>
+                        <div class="row mb-3 tipotransp">
+                            <label for="inputPassword3" class="col-sm-3 col-form-label">Marca vehiculo</label> <!-- Variable de transporte -->
+                            <div class="col-sm-9">
+                                <input name="marca" type="text" class="form-control" id="inputname" maxlength="25">
+                            </div>
+                        </div>
+                         <div class="row mb-3 tipotransp">
+                            <label for="inputEmail3" class="col-sm-3 col-form-label">Patente vehiculo</label> <!-- Variable de transporte -->
+                            <div class="col-sm-9">
+                                <input name="patente" type="text" class="form-control" id="inputdirec" maxlength="7">
+                            </div>
+                        </div>
+                        <div class="row mb-3 tipotransp">
+                            <label for="inputPassword3" class="col-sm-3 col-form-label">Capacidad de pasajeros</label> <!-- Variable de transporte -->
+                            <div class="col-sm-9">
+                                <input name="capacidadPasajeros" type="text" class="form-control" id="inputname" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="1">
+                            </div>
+                        </div>
+                        <div class="tipotour">
+                            <h6 class="mb-4">Galeria de imagenes</h6> <!-- imagen + titulo segun la tabla de la base de datos -->
+                            <div class="row mb-3">
+                                <label for="inputPassword3" class="col-sm-3 col-form-label">Titulo de imagen</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="titulo-imagen" maxlength="20">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-sm-9">
+                                    <!-- recibe jpeg y png -->
+                                    <input class="form-control" type="file" id="formFile">
+                                </div>
+                                <button id="btn-cargar-foto"type="button" class="btn btn-primary col-sm-3">Cargar</button>
+                            </div>
+                            <div class="container-fluid pt-4 px-4">
+                                <div class="bg-light text-center rounded p-4">
+                                    
+                                        <div class="d-flex align-items-center justify-content-between mb-4 row">
+                                            <h6 class="mb-0">Tabla de cargas</h6>
+                                        </div>
+                                    
+                                    <div class="table-responsive">
+                                        <table class="table text-start align-middle table-bordered table-hover mb-0">
+                                            <thead>
+                                                <tr class="text-dark">
+                                                    <th scope="col">Titulo</th>
+                                                    <th scope="col">Imagen</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="table-body-imagenes-tour">
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 
+
+            </form>
+                
+                
+                <button type="submit" class="btn btn-primary" form="formularioCrearServicioExtra">Crear servicio extra</button> 
+
+                    <!-- Footer Start -->
+                    <div class="container-fluid pt-4 px-4">
+                        <div class="bg-light rounded-top p-4">
+                            <div class="row">
+                                <div class="col-12 col-sm-6 text-center text-sm-start">
+                                    &copy; <a href="#">Turismo Real</a>, Todos los derechos reservados. 
+                                </div>
+                                <div class="col-12 col-sm-6 text-center text-sm-end">
+                                    Duoc UC<a href="#">, Portafolio 2022</a>
+                                </br>
+                                Caso 1<a class="border-bottom" href="#" target="_blank">, Seccion-001D</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Footer End -->
+
+                </div>    
+            </div>
+        </div>
+        <!-- Widgets End -->
+
+
+       
+        
+    <!-- Content End -->
+
+
+    <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/chart/chart.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="js/servicioextra.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="js/servicioextra.js"></script>
+    <script src="js/crearServicioExtra.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/csi.min.js"></script>
+</body>
+
+</html>

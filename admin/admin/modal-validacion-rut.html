@@ -1,0 +1,27 @@
+<div class="modal fade" id="modal-verificacion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="text-primary"><i class="fa fa-3x me-2"></i>Validación</h4>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body p-4">
+                <div>
+                    <label class="col-form-label">Foto carnet frontal</label>
+                    <img id="img-carnet-frontal" height="80%" width="80%">
+                </div>
+                <div>
+                    <label class="col-form-label">Foto carnet trasera</label>
+                    <img id="img-carnet-trasera" height="80%" width="80%">
+                </div>
+                <div>
+                    <label id="lbl-rut-cliente" class="col-form-label"></label>
+                </div>
+                <input type="hidden" id="input-id-cliente">
+                <button type="button" onclick="aprobarCliente()" class="btn btn-primary py-2 w-100 mb-4" >Aprobar</button>
+                <button type="button" onclick="rechazarCliente()" class="btn btn-danger py-2 w-100 mb-4" >Rechazar</button>
+            </div>
+        </div>
+    </div>
+
+</div>
