@@ -37,7 +37,7 @@
                 <a href="actualizarEliminarDepto.html" class="navbar-brand me-2">
                     <h2 class="text-primary mb-0">Turismo Real</h2>
                 </a>
-                <a href="#" class="sidebar-toggler">
+                <a href="#" id="sidebar-toggler" class="sidebar-toggler">
                     <i class="fa fa-bars"></i>
                 </a>
             
@@ -60,7 +60,7 @@
 
 
     <!-- Content Start -->
-        <div class="container-fluid pt-4 px-4">
+        <div class="container-fluid pt-4 px-4" onclick="cerrarNav()">
             <div class="row g-4">
 
                 <!------------------------------------------- Check-list ----------------------------------------------------->
@@ -69,13 +69,7 @@
                 <div class="col-sm-12">
                     <div class="bg-light rounded p-4">
                         <div class="row mb-12">
-                            <label class="col-sm-4 col-form-label">Tipo de check-list</label> <!-- Filtro de tipo de servicio -->
-                            <div class="col-sm-8">
-                                <select class="form-select mb-3" aria-label="Default select example">
-                                    <option value="1">Check in</option>
-                                    <option value="2">Check out</option>
-                                </select>
-                            </div>
+                            <label class="col-sm-4 col-form-label" id="lbl-tipo-checklist"></label> <!-- Filtro de tipo de servicio -->
                         </div>
                     </div>
                 </div>
@@ -83,13 +77,16 @@
                     <div class="bg-light rounded p-4"> 
                         <form name="datoscheck">
                             <h6 class="mb-4">Datos reserva check-list</h6>
-                            <label class="col-sm-12 col-form-label">Cliente: Nombre Apellido</label>
-                            <label class="col-sm-12 col-form-label">Rut: 19876543-2</label>
-                            <label class="col-sm-12 col-form-label">Departamento: Nombre departamento</label>
-                            <label class="col-sm-12 col-form-label">Direccion: Calle #123, Comuna, Region</label>
-                            <label class="col-sm-12 col-form-label">Periodo reserva: dd/mm/aaaa - dd/mm/aaaa</label>
-                            <label class="col-sm-12 col-form-label">Restante de pago: $75.000</label>
+                            <label class="col-sm-12 col-form-label" id="lbl-cliente"></label>
+                            <label class="col-sm-12 col-form-label" id="lbl-rut"></label>
+                            <label class="col-sm-12 col-form-label" id="lbl-depto"></label>
+                            <label class="col-sm-12 col-form-label" id="lbl-direccion"></label>
+                            <label class="col-sm-12 col-form-label" id="lbl-periodo"></label>
+                            <label class="col-sm-12 col-form-label" id="lbl-pago-restante"></label>
                         </form>
+                    </div>
+
+                    <div id="div-costo-reparacion">
                     </div>
                 </div>
                 </div>
@@ -100,9 +97,9 @@
                         <form name="fchecklist">
                            
                             <div class="row mb-3 element1">
-                                <label class="col-sm-3 col-form-label">Habitacion 1</label> 
+                                <label class="col-sm-3 col-form-label">Inspección cocina</label> 
                                 <div class="col-sm-9">
-                                    <select class="form-select mb-3" aria-label="Default select example" name="elemento1" onchange="elemento1_ok()">
+                                    <select id="select-cocina" class="form-select mb-3" aria-label="Default select example">
                                         <option value="1">OK</option>
                                         <option value="2">No aplica</option>
                                         <option value="3">No funciona</option>
@@ -110,17 +107,21 @@
                                     </select>          
                                 </div>
                             </div>
-                            <div class="row mb-3 ob1 obs">
-                                <label class="col-sm-3 col-form-label">Observaciones</label>
+                            <div class="row mb-3 element1">
+                                <label class="col-sm-3 col-form-label">Inspección habitacion(es)</label> 
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control">
+                                    <select id="select-habitacion" class="form-select mb-3" aria-label="Default select example">
+                                        <option value="1">OK</option>
+                                        <option value="2">No aplica</option>
+                                        <option value="3">No funciona</option>
+                                        <option value="4">Con observaciones</option>
+                                    </select>          
                                 </div>
                             </div>
-
                             <div class="row mb-3 element2">
-                                <label class="col-sm-3 col-form-label">Habitacion 2</label> 
+                                <label class="col-sm-3 col-form-label">Inpección baño(s)</label> 
                                 <div class="col-sm-9">
-                                    <select class="form-select mb-3" aria-label="Default select example" name="elemento2" onchange="elemento2_ok()">
+                                    <select id="select-banio" class="form-select mb-3" aria-label="Default select example">
                                         <option value="1">OK</option>
                                         <option value="2">No aplica</option>
                                         <option value="3">No funciona</option>
@@ -128,17 +129,10 @@
                                     </select>          
                                 </div>
                             </div>
-                            <div class="row mb-3 ob2 obs">
-                                <label class="col-sm-3 col-form-label">Observaciones</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control">
-                                </div>
-                            </div>
-                            
                             <div class="row mb-3 element3">
-                                <label class="col-sm-3 col-form-label">Habitacion 3</label> 
+                                <label class="col-sm-3 col-form-label">Inspección living</label> 
                                 <div class="col-sm-9">
-                                    <select class="form-select mb-3" aria-label="Default select example" name="elemento3" onchange="elemento3_ok()">
+                                    <select id="select-living" class="form-select mb-3" aria-label="Default select example">
                                         <option value="1">OK</option>
                                         <option value="2">No aplica</option>
                                         <option value="3">No funciona</option>
@@ -146,17 +140,10 @@
                                     </select>          
                                 </div>
                             </div>
-                            <div class="row mb-3 ob3 obs">
-                                <label class="col-sm-3 col-form-label">Observaciones</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control">
-                                </div>
-                            </div>
-
                             <div class="row mb-3 element4">
-                                <label for="inputPassword3" class="col-sm-3 col-form-label">Baño 1</label> 
+                                <label for="inputPassword3" class="col-sm-3 col-form-label">Inspección terraza</label> 
                                 <div class="col-sm-9">
-                                    <select class="form-select mb-3" aria-label="Default select example" name="elemento4" onchange="elemento4_ok()">
+                                    <select id="select-terraza" class="form-select mb-3" aria-label="Default select example">
                                         <option value="1">OK</option>
                                         <option value="2">No aplica</option>
                                         <option value="3">No funciona</option>
@@ -164,17 +151,10 @@
                                     </select>          
                                 </div>
                             </div>
-                            <div class="row mb-3 ob4 obs">
-                                <label class="col-sm-3 col-form-label">Observaciones</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control">
-                                </div>
-                            </div>
-                            
                             <div class="row mb-3 element5">
-                                <label for="inputPassword3" class="col-sm-3 col-form-label">Baño 2</label> 
+                                <label for="inputPassword3" class="col-sm-3 col-form-label">Inspección Agua caliente</label> 
                                 <div class="col-sm-9">
-                                    <select class="form-select mb-3" aria-label="Default select example" name="elemento5" onchange="elemento5_ok()">
+                                    <select id="select-agua" class="form-select mb-3" aria-label="Default select example">
                                         <option value="1">OK</option>
                                         <option value="2">No aplica</option>
                                         <option value="3">No funciona</option>
@@ -182,17 +162,10 @@
                                     </select>          
                                 </div>
                             </div>
-                            <div class="row mb-3 ob5 obs">
-                                <label class="col-sm-3 col-form-label">Observaciones</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control">
-                                </div>
-                            </div>
-
                             <div class="row mb-3 element6">
-                                <label for="inputPassword3" class="col-sm-3 col-form-label">Comedor</label> 
+                                <label for="inputPassword3" class="col-sm-3 col-form-label">Inspección Luz</label> 
                                 <div class="col-sm-9">
-                                    <select class="form-select mb-3" aria-label="Default select example" name="elemento6" onchange="elemento6_ok()">
+                                    <select id="select-luz" class="form-select mb-3" aria-label="Default select example">
                                         <option value="1">OK</option>
                                         <option value="2">No aplica</option>
                                         <option value="3">No funciona</option>
@@ -200,35 +173,10 @@
                                     </select>          
                                 </div>
                             </div>
-                            <div class="row mb-3 ob6 obs">
-                                <label class="col-sm-3 col-form-label">Observaciones</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control">
-                                </div>
-                            </div>
-
                             <div class="row mb-3 element7">
-                                <label for="inputPassword3" class="col-sm-3 col-form-label">Cocina</label> 
+                                <label for="inputPassword3" class="col-sm-3 col-form-label">Inspección Refrigerador</label> 
                                 <div class="col-sm-9">
-                                    <select class="form-select mb-3" aria-label="Default select example" name="elemento7" onchange="elemento7_ok()">
-                                        <option value="1">OK</option>
-                                        <option value="2">No aplica</option>
-                                        <option value="3">No funciona</option>
-                                        <option value="4">Con observaciones</option>
-                                    </select>          
-                                </div>
-                            </div>
-                            <div class="row mb-3 ob7 obs">
-                                <label class="col-sm-3 col-form-label">Observaciones</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control">
-                                </div>
-                            </div>
-
-                            <div class="row mb-3 element8">
-                                <label for="inputPassword3" class="col-sm-3 col-form-label">Living</label> 
-                                <div class="col-sm-9">
-                                    <select class="form-select mb-3" aria-label="Default select example" name="elemento8" onchange="elemento8_ok()">
+                                    <select id="select-refrigerador" class="form-select mb-3" aria-label="Default select example">
                                         <option value="1">OK</option>
                                         <option value="2">No aplica</option>
                                         <option value="3">No funciona</option>
@@ -239,18 +187,19 @@
                             <div class="row mb-3 ob8 obs">
                                 <label class="col-sm-3 col-form-label">Observaciones</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control">
+                                    <textarea id="txt-observacion" class="form-control" id="floatingTextarea" style="height: 150px;"></textarea>
                                 </div>
                             </div>
 
                         </form>
                     </div>
+
                 </div>
 
 
                 
                 
-                <button type="submit" class="btn btn-primary">Crear servicio extra</button> 
+                <button type="button" onclick="ingresarChecklist()" class="btn btn-primary">Ingresar Checklist</button> 
 
                     <!-- Footer Start -->
                     <div class="container-fluid pt-4 px-4">
@@ -294,13 +243,17 @@
     <script src="lib/tempusdominus/js/moment.min.js"></script>
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-    <script src="js/checklist.js"></script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
     <script src="js/checklist.js"></script>
     <script src="js/csi.min.js"></script>
     <script src="js/utils.js"></script>
+
+    <script>
+        buscarReserva();
+        mostrarFormularioCostoReparacion();
+    </script>
 
 </body>
 
