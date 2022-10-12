@@ -34,7 +34,8 @@ form.addEventListener('submit', async function(e){
             "Content-Type": "application/json",
             "Accept": "application/json"
          }
-    }).then(console.log("200"))
+    }).then(console.log("200")),
+    alert("Servicio extra creado exitosamente")
         
 })
 
@@ -75,3 +76,13 @@ btnCargarFoto.addEventListener('click', async function(){
     fotoTourList.push(fotoEnviar);
     console.log(fotoTourList)
 })
+
+
+//-------------------------------VALIDACIONES-------------------------------------------
+//PERMITIR SOLO TEXTO CAMPO "NOMBRE Y APELLIDO"
+function txNombres() {
+    if ((event.keyCode != 32) && (event.keyCode < 65) || (event.keyCode > 90) && (event.keyCode < 97) || (event.keyCode > 122))
+     event.returnValue = false;
+}
+
+

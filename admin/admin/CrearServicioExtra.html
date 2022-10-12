@@ -198,31 +198,31 @@
                             <div class="row mb-3">
                                 <label for="inputPassword3" class="col-sm-3 col-form-label">Persona a cargo</label> <!-- Variable de tour y transporte -->
                                 <div class="col-sm-9">
-                                    <input name="personaACargo" type="text" class="form-control" id="inputname">
+                                    <input name="personaACargo" type="text" class="form-control" id="inputname" onkeypress="txNombres()" maxlength=30>
                                 </div>
                             </div>
                             <div class="row mb-3 tipotour">
                                 <label for="inputPassword3" class="col-sm-3 col-form-label">Titulo tour</label> <!-- Variable de tour -->
                                 <div class="col-sm-9">
-                                    <input name="tituloTour" type="text" class="form-control" id="inputname">
+                                    <input name="tituloTour" type="text" class="form-control" id="inputname" maxlength="30">
                                 </div>
                             </div>
                             <div class="row mb-3 tipotour">
                                 <label for="inputPassword3" class="col-sm-3 col-form-label">cantidad de personas max.</label> <!-- Variable de tour -->
                                 <div class="col-sm-9">
-                                    <input name="cantidadPersonasMax" type="text" class="form-control" id="inputname">
+                                    <input name="cantidadPersonasMax" type="text" class="form-control" id="inputname" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="2" >
                                 </div>
                             </div>
                             <div class="row mb-3 tipotour">
                                 <label for="inputPassword3" class="col-sm-3 col-form-label">Descripcion</label> <!-- Variable de tour -->
                                 <div class="col-sm-9">
-                                    <textarea name="descripcionTour" class="form-control" id="floatingTextarea" style="height: 150px;"></textarea>
+                                    <textarea name="descripcionTour" class="form-control" id="floatingTextarea" style="height: 150px;" maxlength="45"></textarea>
                                 </div>
                             </div>
                             <div class="row mb-3 tipotour">
-                                <label for="inputPassword3" class="col-sm-3 col-form-label">Valor servicio extra</label> <!-- Variable de tour y transporte -->
+                                <label for="inputPassword3" class="col-sm-3 col-form-label">Valor servicio extra</label > <!-- Variable de tour y transporte -->
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="valorTour" form="formularioCrearServicioExtra" >
+                                    <input type="text" class="form-control" name="valorTour" form="formularioCrearServicioExtra" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="6">
                                 </div>
                             </div>
                     </div>
@@ -234,25 +234,25 @@
                         <div class="row mb-3 tipotransp">
                             <label for="inputEmail3" class="col-sm-3 col-form-label">Modelo vehiculo</label> <!-- Variable de transporte -->
                             <div class="col-sm-9">
-                                <input name="modelo" type="text" class="form-control" id="inputdirec">
+                                <input name="modelo" type="text" class="form-control" id="inputdirec" maxlength="25">
                             </div>
                         </div>
                         <div class="row mb-3 tipotransp">
                             <label for="inputPassword3" class="col-sm-3 col-form-label">Marca vehiculo</label> <!-- Variable de transporte -->
                             <div class="col-sm-9">
-                                <input name="marca" type="text" class="form-control" id="inputname">
+                                <input name="marca" type="text" class="form-control" id="inputname" maxlength="25">
                             </div>
                         </div>
                          <div class="row mb-3 tipotransp">
                             <label for="inputEmail3" class="col-sm-3 col-form-label">Patente vehiculo</label> <!-- Variable de transporte -->
                             <div class="col-sm-9">
-                                <input name="patente" type="text" class="form-control" id="inputdirec">
+                                <input name="patente" type="text" class="form-control" id="inputdirec" maxlength="7">
                             </div>
                         </div>
                         <div class="row mb-3 tipotransp">
                             <label for="inputPassword3" class="col-sm-3 col-form-label">Capacidad de pasajeros</label> <!-- Variable de transporte -->
                             <div class="col-sm-9">
-                                <input name="capacidadPasajeros" type="number" class="form-control" id="inputname">
+                                <input name="capacidadPasajeros" type="text" class="form-control" id="inputname" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="1">
                             </div>
                         </div>
                         <div class="tipotour">
@@ -260,7 +260,7 @@
                             <div class="row mb-3">
                                 <label for="inputPassword3" class="col-sm-3 col-form-label">Titulo de imagen</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="titulo-imagen">
+                                    <input type="text" class="form-control" id="titulo-imagen" maxlength="20">
                                 </div>
                             </div>
                             <div class="row mb-3">

@@ -29,6 +29,9 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <!-- PARA FORMATEAR EL RUT  -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/css/inputmask.min.css" rel="stylesheet"/>
 </head>
 
 <body>
@@ -175,13 +178,13 @@
                             <div class="row mb-3">
                                 <label for="inputPassword3" class="col-sm-3 col-form-label">Nombre usuario</label> <!-- Variable de usuario -->
                                 <div class="col-sm-9">
-                                    <input name="nombreUsuario" type="text" class="form-control" id="inputname" placeholder="Nombre Apellido">
+                                    <input name="nombreUsuario" type="text" class="form-control" id="inputname" placeholder="Nombre Apellido" onkeypress="txNombres()">
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="inputPassword3" class="col-sm-3 col-form-label">Rut</label> <!-- Variable de usuario -->
                                 <div class="col-sm-9">
-                                    <input name="rutUsuario" type="text" class="form-control" id="inputname" placeholder="12345678-9">
+                                    <input name="rutUsuario" type="text" class="form-control" id="inputRut" placeholder="12.345.678-9" onclick="formatearRut()">
                                 </div>
                             </div>
 
@@ -213,22 +216,33 @@
                             <div class="row mb-3">
                                 <label for="inputPassword3" class="col-sm-3 col-form-label">Email empresarial</label> <!-- Variable de usuario -->
                                 <div class="col-sm-9">
-                                    <input name="emailUsuario" type="email" class="form-control" id="inputname" placeholder="name.lastname@turismoreal.cl">
+                                    <input name="emailUsuario" type="email" class="form-control" id="inputMail" placeholder="name.lastname@turismoreal.cl" onblur="validarCorreo(document.getElementById('inputMail').value)">
+                                    <span id="errorMail"></span>
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="inputPassword3" class="col-sm-3 col-form-label">Telefono</label> <!-- Variable de usuario -->
                                 <div class="col-sm-9">
-                                    <input name="telefonoUsuario" type="text" class="form-control" id="inputname" placeholder="987654321">
+                                    <input name="telefonoUsuario" type="text" class="form-control" id="inputname" placeholder="987654321" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="9">
                                 </div>
                             </div>
 
                             <div class="row mb-3">
                                 <label for="inputPassword3" class="col-sm-3 col-form-label">Contraseña</label> <!-- Variable de usuario -->
                                 <div class="col-sm-9">
-                                    <input name="passwordUsuario" type="password" class="form-control" id="inputname" placeholder="password">
+                                    <input name="passwordUsuario" type="password" class="form-control" id="inputContrasenia" maxlength="30" placeholder="Contraseña" onblur="comparar_pass()">
                                 </div>
                             </div>
+
+                            <div class="row mb-3">
+                                <label for="floatingPassword" class="col-sm-3 col-form-label" >Reingrese contraseña</label>
+                                <div class="col-sm-9">
+                                    <input type="password" id="pass_1" class="form-control" id="floatingPassword" maxlength="30" placeholder="Repita contraseña">
+                                    <span id="error2"></span>
+                                </div>
+                            </div>
+                            <!-- ERROR DE CONTRASEÑAS DISTINTAS  -->
+                            
                             <!-- <div class="row mb-3">
                                 <label for="inputPassword3" class="col-sm-3 col-form-label">Repetir contraseña</label>
                                 <div class="col-sm-9">
@@ -259,7 +273,7 @@
                 </div>
                 
                 
-                <button type="submit" class="btn btn-primary" form="crear-usuario-form">Crear nuevo usuario</button> 
+                <button id="registrar-cliente" type="submit" class="btn btn-primary" form="crear-usuario-form">Crear nuevo usuario</button> 
 
                     <!-- Footer Start -->
                     <div class="container-fluid pt-4 px-4">
@@ -307,6 +321,14 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
     <script src="js/crear-usuario.js"></script>
+
+    <!-- JQUERY  -->
+    <script src="jquery-3.2.1.min.js"></script>
+
+    <!-- PARA FORMATEAR EL RUT -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/inputmask/inputmask.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.js"></script>
 </body>
 
 </html>

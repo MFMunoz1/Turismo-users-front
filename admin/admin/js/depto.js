@@ -29,7 +29,8 @@ form.addEventListener('submit', async function(e){
 		   "Accept": "application/json"
         }
     }).then(
-        console.log("200")
+        console.log("200"),
+        alert("Departamento creado exitosamente")
     );
     
     //Dont submit the form.
@@ -165,3 +166,4 @@ btnCargarFoto.addEventListener('click', async function(){
 })
 
 
+//---------------------------------------VALIDACIONES---------------------------------------------------

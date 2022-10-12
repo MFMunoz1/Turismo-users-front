@@ -30,7 +30,8 @@ btnEnviarLista.addEventListener('click', ()=>{
         }
     }).then(
         
-        console.log("200")
+        console.log("200"),
+        alert("Servicio depto creado exitosamente")
     );
 })
 
@@ -73,7 +74,8 @@ btnEliminarServicioDepto.addEventListener('click', ()=>{
      }
  }).then(
      
-     console.log("200")
+     console.log("200"),
+     alert("Servicio depto eliminado exitosamente")
  );
 
     });
@@ -95,3 +97,10 @@ btnEliminarServicioDepto.addEventListener('click', ()=>{
                 document.getElementById('data_serviciosDepto').innerHTML = body
             }
     
+
+//---------------------------VALIDACIONES-----------------------------------------------------------------------------------------
+//PERMITIR SOLO TEXTO CAMPO "NOMBRE Y APELLIDO"
+function nombreServicio() {
+    if ((event.keyCode != 32) && (event.keyCode < 65) || (event.keyCode > 90) && (event.keyCode < 97) || (event.keyCode > 122))
+     event.returnValue = false;
+}

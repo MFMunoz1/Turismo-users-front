@@ -171,21 +171,21 @@
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="inputPassword3" class="col-sm-3 col-form-label">Nombre</label>
+                                <label for="inputPassword3" class="col-sm-3 col-form-label">Título</label>
                                 <div class="col-sm-9">
-                                    <input name="nombreDepto" type="text" class="form-control" id="inputname">
+                                    <input name="nombreDepto" type="text" class="form-control" id="inputname" maxlength=30 placeholder="Título del departamento">
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="inputPassword3" class="col-sm-3 col-form-label">Habitaciones</label>
                                 <div class="col-sm-9">
-                                    <input name="cantidadHabitaciones" type="number" class="form-control" id="inputname">
+                                    <input name="cantidadHabitaciones" type="text" class="form-control" id="inputname" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="1">
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="inputPassword3" class="col-sm-3 col-form-label">Baños</label>
                                 <div class="col-sm-9">
-                                    <input name="cantidadBanios" type="number" class="form-control" id="inputname">
+                                    <input name="cantidadBanios" type="text" class="form-control" id="inputname" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="1">
                                 </div>
                             </div>
                             <!------ estado : disponible ó deshabilitado  ------>
@@ -220,19 +220,19 @@
                             <div class="row mb-3">
                                 <label for="inputPassword3" class="col-sm-3 col-form-label">Dimensiones</label>
                                 <div class="col-sm-9">
-                                    <input name="dimensiones" type="number" class="form-control" id="inputname">
+                                    <input name="dimensiones" type="text" class="form-control" id="inputname" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="3">
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="inputPassword3" class="col-sm-3 col-form-label">Capacidad huespedes</label>
                                 <div class="col-sm-9">
-                                    <input name="capacidadHuespedes" type="number" class="form-control" id="inputname">
+                                    <input name="capacidadHuespedes" type="text" class="form-control" id="inputname" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="2">
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="inputPassword3" class="col-sm-3 col-form-label">Camas totales</label>
                                 <div class="col-sm-9">
-                                    <input name="cantidadCamas" type="number" class="form-control" id="inputname">
+                                    <input name="cantidadCamas" type="text" class="form-control" id="inputname" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="1">
                                 </div>
                             </div>
                             <div class="row mb-3">
@@ -244,7 +244,7 @@
                             <div class="row mb-3">
                                 <label for="inputPassword3" class="col-sm-3 col-form-label">Valor diario</label>
                                 <div class="col-sm-9">
-                                    <input name="valorDiario" type="text" class="form-control" id="inputname">
+                                    <input name="valorDiario" type="text" class="form-control" id="inputname" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="6">
                                 </div>
                             </div>
                             
@@ -280,7 +280,7 @@
                         <div class="row mb-3">
                             <label for="inputPassword3" class="col-sm-3 col-form-label">Titulo de imagen</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="titulo-imagen">
+                                <input type="text" class="form-control" id="titulo-imagen" maxlength="30">
                             </div>
                         </div>
                         <div class="row mb-3">

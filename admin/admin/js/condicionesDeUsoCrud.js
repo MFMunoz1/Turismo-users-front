@@ -30,7 +30,8 @@ btnEnviarLista.addEventListener('click', ()=>{
         }
     }).then(
         
-        console.log("200")
+        console.log("200"),
+        alert("Condición creada exitosamente")
     );
 })
 
@@ -71,7 +72,8 @@ btnEliminarCondicion.addEventListener('click', ()=>{
      }
  }).then(
      
-     console.log("200")
+     console.log("200"),
+     alert("Condición eliminada exitosamente")
  );
 
     });
@@ -92,3 +94,10 @@ fetch(url_condicionesUso)
             }
             document.getElementById('data-condicionesDeUso').innerHTML = body
         }
+
+//-------------------------------------VALIDACIONES-------------------------------------------------------------------
+//PERMITIR SOLO TEXTO CAMPO "NOMBRE Y APELLIDO"
+function nombreCondicion() {
+    if ((event.keyCode != 32) && (event.keyCode < 65) || (event.keyCode > 90) && (event.keyCode < 97) || (event.keyCode > 122))
+     event.returnValue = false;
+}

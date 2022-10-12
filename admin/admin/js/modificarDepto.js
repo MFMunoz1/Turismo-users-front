@@ -17,7 +17,7 @@ fetch(url)
             document.getElementById('data').innerHTML = body
         }
 
-//FALTA AGREGAR FUNCIONALIDAD A BOTON DE MODIFICAR DEPTO
+//ELIMINAR DEPTO
 document.getElementById("data").addEventListener('click', (e)=>{
     console.log()
     var idDepto = e.target.parentElement.parentElement.firstChild.textContent
