@@ -1,0 +1,46 @@
+<div class="modal fade" id="modal-modificarreserva" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="text-primary"><i class="fa fa-3x me-2"></i>Modificar reserva</h4>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body p-4">
+                <div class="col-sm-12">
+                    <div class="bg-light rounded p-4 mb-4"> 
+                        <form name="datoscheck">
+                            <h6 class="mb-4">Datos reserva</h6>
+                            <div>Cliente: Nombre Apellido</div>
+                            <div>Rut: 19876543-2</div>
+                            <div>Departamento: Nombre departamento</div>
+                            <div>Direccion: Calle #123, Comuna, Region</div>
+                            <div>Periodo reserva: dd/mm/aaaa - dd/mm/aaaa</div>
+                            <div>Restante de pago: $75.000</div>
+                        </form>
+                    </div>
+                </div>
+                <h6 class="mb-4">Modificar Reserva</h6>
+                        <div class="mb-4">Porfavor seleccione las nuevas fechas</div>
+                        <form name="">
+                           
+                            <div class="row mb-3">
+                                <label class="col-sm-3 col-form-label">Llegada</label>
+                                <div class="col-sm-9">
+                                    <input type="date" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label class="col-sm-3 col-form-label">Salida</label>
+                                <div class="col-sm-9">
+                                    <input type="date" class="form-control">
+                                </div>
+                            </div>
+                <input type="hidden" id="">
+                <button type="button" onclick="funcion()" class="btn btn-primary py-2 w-100 mb-4" >Cancelar</button>
+                <button type="button" onclick="funcion()" class="btn btn-danger py-2 w-100 mb-4" >Modificar</button>
+            </div>
+        </div>
+    </div>
+
+</div>
