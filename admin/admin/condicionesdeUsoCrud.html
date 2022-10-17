@@ -175,8 +175,9 @@
                             <div class="row mb-3 listacond">
                                 <label  class="col-sm-3 col-form-label">Condicion</label> <!-- lista de condiciones -->
                                 <div class="col-sm-9">
-                                    <select id="selectCondicionDeUso" class="form-select mb-3" aria-label="Default select example">
+                                    <select id="selectCondicionDeUso" class="form-select mb-3" aria-label="Default select example" onblur="validarCondicionVacio(this.value)">
                                         <option value="0" selected>Seleccione una condición</option>
+                                        <span id="errorVacio"></span>
                                     </select>
                                 </div>
                             </div>

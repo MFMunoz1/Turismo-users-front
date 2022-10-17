@@ -10,6 +10,7 @@ var eliminarCondicion = document.getElementById('btnEliminarCondicion');
 //POR DEFECTO LOS BOTONES ESTÁN DESHABILITADOS
 enviarLista.disabled = true;
 agregarElementoLista.disabled = true;
+eliminarCondicion.disabled = true;
 
 
 form.addEventListener('submit', async function(e){
@@ -49,6 +50,25 @@ function validarNombreVacio(valor){
                 $('#errorVacio').text("")
                 //se habilitan botones
                 agregarElementoLista.disabled = false;
+                enviarLista.disabled = false;
+            }
+        })
+}
+
+//VALIDA QUE SE SELECCIONE UN ELEMENTO DE LA LISTA DEL COMBOBOX
+function validarCondicionVacio(valor){
+    $(document).ready(function() {
+
+            var opcionCondicion = document.getElementById("selectCondicionDeUso");
+
+            if(opcionCondicion.value == "0"){
+                $('#errorVacio').text("Seleccione servicio").css("color", "red");
+                eliminarCondicion.disabled = true;
+            }
+            else{
+                $('#errorVacio').text("")
+                //se habilitan botones
+                eliminarCondicion.disabled = false;
                 //enviarLista.disabled = false;
             }
         })

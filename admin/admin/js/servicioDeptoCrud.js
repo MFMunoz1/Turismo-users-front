@@ -3,6 +3,17 @@ var arrayServicioDepto =[];
 var selectServiciosDepto;
 var form = document.getElementById('servicioDeptoForm');
 
+var selectAccionServicio = document.getElementById("selectAccionServicio");
+var inputNombreServicio = document.getElementById("inputname");
+var agregarElementoLista = document.getElementById('agregarServicio');
+var enviarLista = document.getElementById('btnEnviarLista');
+var eliminarServicio = document.getElementById('btnEliminarServicioDepto');
+//POR DEFECTO LOS BOTONES ESTÁN DESHABILITADOS
+enviarLista.disabled = true;
+agregarElementoLista.disabled = true;
+eliminarServicio.disabled = true;
+
+
 form.addEventListener('submit', async function(e){
     e.preventDefault();
     var formData = new FormData(form);
@@ -12,6 +23,53 @@ form.addEventListener('submit', async function(e){
     
     return false; 
 });
+
+function contieneElemento(){
+    agregarElementoLista.disabled = true;
+    enviarLista.disabled = false;
+}
+
+//VALIDA QUE EL INPUT NO ESTÉ VACÍO.
+//ACCIÓN: CREAR CONDICIÓN
+function validarNombreVacio(valor){
+    $(document).ready(function() {
+
+            var inputNombre = document.getElementById("inputname").value;
+
+            if(inputNombre == "" || inputNombre == null){
+                $('#errorVacio').text("Ingrese una servicio").css("color", "red");
+                agregarElementoLista.disabled = true;
+                enviarLista.disabled = true;
+            }
+            else{
+                $('#errorVacio').text("")
+                //se habilitan botones
+                agregarElementoLista.disabled = false;
+                //enviarLista.disabled = false;
+            }
+        })
+}
+// psicologicas pruebas
+// mañana 5 
+//VALIDA QUE SE SELECCIONE UN ELEMENTO DE LA LISTA DEL COMBOBOX
+function validarServicioVacio(valor){
+    $(document).ready(function() {
+
+            var opcionServicio = document.getElementById("select-serviciosDepto");
+
+            if(opcionServicio.value == "0"){
+                $('#errorVacio').text("Seleccione servicio").css("color", "red");
+                eliminarServicio.disabled = true;
+            }
+            else{
+                $('#errorVacio').text("")
+                //se habilitan botones
+                eliminarServicio.disabled = false;
+                //enviarLista.disabled = false;
+            }
+        })
+}
+
 
 var btnEnviarLista = document.getElementById('btnEnviarLista');
 btnEnviarLista.addEventListener('click', ()=>{
@@ -31,9 +89,14 @@ btnEnviarLista.addEventListener('click', ()=>{
     }).then(
         
         console.log("200"),
-        alert("Servicio depto creado exitosamente")
+        alert("Servicio depto creado exitosamente"),
+        selectAccionServicio.value = "Selected",
+        inputNombreServicio.value = "",
+        location.reload(),
     );
 })
+
+
 
 //---------------CARGAR SELECT CON VALORES DE LA BDD
 
@@ -74,8 +137,11 @@ btnEliminarServicioDepto.addEventListener('click', ()=>{
      }
  }).then(
      
-     console.log("200"),
-     alert("Servicio depto eliminado exitosamente")
+    console.log("200"),
+    alert("Servicio depto eliminado exitosamente"),
+    location.reload(),
+    selectServiciosDepto.remove(idServicioSeleccionado),
+    selectAccionServicio.value = "Selected"
  );
 
     });

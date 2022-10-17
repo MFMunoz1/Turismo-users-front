@@ -162,7 +162,7 @@
                             <div class="row mb-3">
                                 <label class="col-sm-3 col-form-label">Accion</label> <!-- Filtro de tipo de accion -->
                                 <div class="col-sm-9">
-                                    <select class="form-select mb-3" aria-label="Default select example" name="accionserv" onchange="elementos_servicio()">
+                                    <select id="selectAccionServicio" class="form-select mb-3" aria-label="Default select example" name="accionserv" onchange="elementos_servicio()">
                                         <option value="0" selected>Seleccione accion a realizar</option>
                                         <option value="1" id="crearserv" >Crear servicio</option>
                                         <!-- <option value="2" id="modserv">Modificar servicio</option> -->
@@ -175,8 +175,9 @@
                             <div class="row mb-3 listaserv">
                                 <label  class="col-sm-3 col-form-label">Servicio</label> <!-- lista de servicios -->
                                 <div class="col-sm-9">
-                                    <select id="select-serviciosDepto" class="form-select mb-3" aria-label="Default select example">
-                                        
+                                    <select id="select-serviciosDepto" class="form-select mb-3" aria-label="Default select example" onblur="validarServicioVacio(this.value)">
+                                        <option value="0" selected>Seleccione un servicio</option>
+                                        <span id="errorVacio"></span>
                                     </select>
                                 </div>
                             </div>
@@ -184,12 +185,13 @@
                             <div class="row mb-3 nombreserv" >
                                 <label class="col-sm-3 col-form-label">Nombre servicio</label> <!-- nombre servicio -->
                                 <div class="col-sm-9">
-                                    <input name="tipoServicioDepto" type="text" class="form-control" id="inputname" placeholder="Nombre del servicio" onkeypress="nombreServicio()" maxlength=40>
+                                    <input name="tipoServicioDepto" type="text" class="form-control" id="inputname" placeholder="Nombre del servicio" onkeypress="nombreServicio()" onblur="validarNombreVacio(this.value)" maxlength=40>
+                                    <span id="errorVacio"></span>
                                 </div>
                                 <!-- name="tipoServicioDepto" -->
                             </div>       
                         </form>
-                        <button type="submit" class="btn btn-secondary col-sm-12" form="servicioDeptoForm">Agregar servicio a la lista</button>
+                        <button id="agregarServicio" type="submit" class="btn btn-secondary col-sm-12" form="servicioDeptoForm" onclick="contieneElemento()">Agregar servicio a la lista</button>
                         <br><br>
                         <button id="btnEnviarLista" type="submit" class="btn btn-primary col-sm-12" form="servicioDeptoForm">Enviar lista</button>
                         <br><br>
