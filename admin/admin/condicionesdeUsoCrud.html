@@ -184,7 +184,8 @@
                             <div class="row mb-3 nombrecond" >
                                 <label class="col-sm-3 col-form-label">Nombre condicion</label> <!-- nombre condicion -->
                                 <div class="col-sm-9">
-                                    <input name="tipoCondicionDeUso" type="text" class="form-control" id="inputcond" placeholder="Nombre de la nueva condicion" onkeypress="nombreCondicion()" maxlength=40>
+                                    <input name="tipoCondicionDeUso" type="text" class="form-control" id="inputcond" placeholder="Nombre de la nueva condicion" onkeypress="nombreCondicion()" onblur="validarNombreVacio(this.value)" maxlength=40>
+                                    <span id="errorVacio"></span>
                                 </div>
                             </div>       
                         </form>

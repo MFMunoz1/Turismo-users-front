@@ -21,9 +21,40 @@ form.addEventListener('submit', async function(e){
     return false; 
 });
 
-enviarLista.disabled = true;
+ enviarLista.disabled = true;
+ agregarElementoLista.disabled = true;
 function contieneElemento(){
+
+    agregarElementoLista.disabled = true;
     enviarLista.disabled = false;
+}
+
+function validarNombreVacio(valor){
+    $(document).ready(function() {
+        
+            //var inputNombre = $('#inputNombre').val();
+            var inputNombre = document.getElementById("inputcond").value;
+            //enviarLista.disabled = true;
+            //agregarElementoLista.disabled = true;
+
+            if(inputNombre == "" || inputNombre == null){
+                $('#errorVacio').text("Ingrese una condición").css("color", "red");
+                agregarElementoLista.disabled = true;
+                enviarLista.disabled = true;
+            }
+            else{
+                $('#errorVacio').text("")
+                agregarElementoLista.disabled = false;
+                enviarLista.disabled = false;
+            }
+            
+            // }else if (inputNombre != null || inputNombre != "" ){
+            //     $('#errorVacio').text("");
+            //     agregarElementoLista.disabled = false;
+            //     enviarLista.disabled = false;
+            // }
+        })
+    
 }
 
 
@@ -47,10 +78,9 @@ btnEnviarLista.addEventListener('click', ()=>{
         
         console.log("200"),
         alert("Condición creada exitosamente"),
-        location.reload(),
         selectAccion.value = "Selected",
         inputNombreCondicion.value = "",
-        
+        location.reload(),
     );
 })
 
