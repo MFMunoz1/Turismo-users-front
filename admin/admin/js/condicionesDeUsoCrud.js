@@ -2,16 +2,31 @@ var condicionesDeUso = [];
 var arrayCondicionesDeUso =[];
 var selectCondiciones;
 var form = document.getElementById('condicionesDeUsoForm');
+var selectAccion = document.getElementById('selectAccion');
+var inputNombreCondicion = document.getElementById('inputcond');
+var agregarElementoLista = document.getElementById('agregarCondicion');
+var enviarLista = document.getElementById('btnEnviarLista');
+var eliminarCondicion = document.getElementById('btnEliminarCondicion');
+
 
 form.addEventListener('submit', async function(e){
     e.preventDefault();
     var formData = new FormData(form);
     // añadiendo lista de serivicion a object plain 
     const plainObjectFormData = Object.fromEntries(formData.entries());
-    condicionesDeUso.push(plainObjectFormData)
+    condicionesDeUso.push(plainObjectFormData);
+
+    //alert("Elemento agregado a la lista");
     
     return false; 
 });
+
+enviarLista.disabled = true;
+function contieneElemento(){
+    enviarLista.disabled = false;
+}
+
+
 
 var btnEnviarLista = document.getElementById('btnEnviarLista');
 btnEnviarLista.addEventListener('click', ()=>{
@@ -31,7 +46,11 @@ btnEnviarLista.addEventListener('click', ()=>{
     }).then(
         
         console.log("200"),
-        alert("Condición creada exitosamente")
+        alert("Condición creada exitosamente"),
+        location.reload(),
+        selectAccion.value = "Selected",
+        inputNombreCondicion.value = "",
+        
     );
 })
 
@@ -72,8 +91,12 @@ btnEliminarCondicion.addEventListener('click', ()=>{
      }
  }).then(
      
-     console.log("200"),
-     alert("Condición eliminada exitosamente")
+    console.log("200"),
+    alert("Condición eliminada exitosamente"),
+    location.reload(),
+    selectCondiciones.remove(idCondicionDeUso),
+    selectAccion.value = "Selected"
+    
  );
 
     });

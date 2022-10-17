@@ -1,5 +1,8 @@
 $('.listacond').hide()
 $('.nombrecond').hide()
+$(' #btnEliminarCondicion').hide()
+$(' #agregarCondicion').hide()
+$(' #btnEnviarLista').hide()
 
 // ELEMENTOS DEL FORMULARIO SEGUN OPCION
 function elementos_condicion(){
@@ -8,7 +11,10 @@ function elementos_condicion(){
 
     if (accion=='1') {
         $('.nombrecond').show();
-        $('.listacond').hide()
+        $('.listacond').hide();
+        $(' #agregarCondicion').show();
+        $(' #btnEnviarLista').show();
+        $(' #btnEliminarCondicion').hide();
     }
     else if (accion=='2') {
         $('.listacond').show();
@@ -16,11 +22,17 @@ function elementos_condicion(){
     }
     else if (accion=='3') {
         $('.listacond').show();
-        $('.nombrecond').hide()
+        $('.nombrecond').hide();
+        $(' #btnEliminarCondicion').show();
+        $(' #agregarCondicion').hide();
+        $(' #btnEnviarLista').hide();
     }
     else {
         $('.listacond').hide()
         $('.nombrecond').hide()  
+        $(' #btnEliminarCondicion').hide();
+        $(' #agregarCondicion').hide();
+        $(' #btnEnviarLista').hide();
     }
     
 }

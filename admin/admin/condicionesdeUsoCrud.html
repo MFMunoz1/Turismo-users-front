@@ -162,7 +162,7 @@
                             <div class="row mb-3">
                                 <label class="col-sm-3 col-form-label">Accion</label> <!-- Filtro de tipo de accion -->
                                 <div class="col-sm-9">
-                                    <select class="form-select mb-3" aria-label="Default select example" name="accioncond" onchange="elementos_condicion()">
+                                    <select  id="selectAccion" class="form-select mb-3" aria-label="Default select example" name="accioncond" onchange="elementos_condicion()">
                                         <option value="0" selected>Seleccione accion a realizar</option>
                                         <option value="1" id="crearserv" >Crear condicion</option>
                                         <!-- <option value="2" id="modserv">Modificar condicion</option> -->
@@ -176,7 +176,7 @@
                                 <label  class="col-sm-3 col-form-label">Condicion</label> <!-- lista de condiciones -->
                                 <div class="col-sm-9">
                                     <select id="selectCondicionDeUso" class="form-select mb-3" aria-label="Default select example">
-                                        
+                                        <option value="0" selected>Seleccione una condición</option>
                                     </select>
                                 </div>
                             </div>
@@ -188,11 +188,11 @@
                                 </div>
                             </div>       
                         </form>
-                        <button type="submit" class="btn btn-secondary col-sm-12" form="condicionesDeUsoForm">Agregar condición</button>
+                        <button id="agregarCondicion" type="submit" class="btn btn-secondary col-sm-12" form="condicionesDeUsoForm" onclick="contieneElemento()">Agregar condición</button>
                         <br><br>
                         <button id="btnEnviarLista" type="submit" class="btn btn-primary col-sm-12" form="condicionesDeUsoForm">Enviar lista</button>
                         <br><br>
-                        <button id="btnEliminarCondicion" type="submit" class="btn btn-danger col-sm-12" form="condicionesDeUsoForm">Eliminar condición</button>
+                        <button id="btnEliminarCondicion" type="submit" class="btn btn-danger col-sm-12" form="condicionesDeUsoForm" >Eliminar condición</button>
                     </div>
                     
                 </div>
