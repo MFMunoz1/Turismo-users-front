@@ -7,6 +7,9 @@ var inputNombreCondicion = document.getElementById('inputcond');
 var agregarElementoLista = document.getElementById('agregarCondicion');
 var enviarLista = document.getElementById('btnEnviarLista');
 var eliminarCondicion = document.getElementById('btnEliminarCondicion');
+//POR DEFECTO LOS BOTONES ESTÁN DESHABILITADOS
+enviarLista.disabled = true;
+agregarElementoLista.disabled = true;
 
 
 form.addEventListener('submit', async function(e){
@@ -21,21 +24,21 @@ form.addEventListener('submit', async function(e){
     return false; 
 });
 
- enviarLista.disabled = true;
- agregarElementoLista.disabled = true;
-function contieneElemento(){
 
+ //PERMITE DAR SOLO 1 CLICK A AGREGAR ELEMENTO A LA LISTA (PARA QUE NO ACUMULE REPETIDOS POR CADA CLICK AL BOTON)
+ //se activan sólo cuando el input tenga datos
+//Cuando se agregue el elemento a la lista, se deshabilita el boton "Agregar condicion", y se habilita "Enviar lista"
+function contieneElemento(){
     agregarElementoLista.disabled = true;
     enviarLista.disabled = false;
 }
 
+//VALIDA QUE EL INPUT NO ESTÉ VACÍO.
+//ACCIÓN: CREAR CONDICIÓN
 function validarNombreVacio(valor){
     $(document).ready(function() {
-        
-            //var inputNombre = $('#inputNombre').val();
+
             var inputNombre = document.getElementById("inputcond").value;
-            //enviarLista.disabled = true;
-            //agregarElementoLista.disabled = true;
 
             if(inputNombre == "" || inputNombre == null){
                 $('#errorVacio').text("Ingrese una condición").css("color", "red");
@@ -44,17 +47,11 @@ function validarNombreVacio(valor){
             }
             else{
                 $('#errorVacio').text("")
+                //se habilitan botones
                 agregarElementoLista.disabled = false;
-                enviarLista.disabled = false;
+                //enviarLista.disabled = false;
             }
-            
-            // }else if (inputNombre != null || inputNombre != "" ){
-            //     $('#errorVacio').text("");
-            //     agregarElementoLista.disabled = false;
-            //     enviarLista.disabled = false;
-            // }
         })
-    
 }
 
 
