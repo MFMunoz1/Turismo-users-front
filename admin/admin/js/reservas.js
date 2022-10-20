@@ -31,6 +31,9 @@ function buscarReservas(){
         {
             let body = ""
             $.each(data, function( index, reserva ) {
+                if(reserva.estadoReserva.idEstadoReserva !== 1 && reserva.estadoReserva.idEstadoReserva !== 6){
+                    return;
+                }
                 var fechaLlegadaReserva = reserva.fechaLlegada.split("T")[0];
                 var fechaSalidaReserva = reserva.fechaSalida.split("T")[0]
                 var tipoCheckList = fechaLlegadaReserva == fechaActual ? "checkin" : fechaSalidaReserva == fechaActual ? "checkout" : "ninguno";
