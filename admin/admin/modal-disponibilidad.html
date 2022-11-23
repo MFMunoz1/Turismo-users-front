@@ -1,0 +1,27 @@
+<div class="modal fade" id="modal-disponibilidad" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="text-primary"><i class="fa fa-3x me-2"></i>Disponibilidad</h4>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body p-4">
+                <div>
+                    seleccione un rango de fechas (insertar datepicker)
+                </div>
+                <div class="col-sm-12 col-md-12 col-xl-12">
+                    <div class="h-100 bg-light rounded p-4">
+                        <div class="d-flex align-items-center justify-content-between mb-4">
+                            <h6 class="mb-0">Calendario</h6>
+                        </div>
+                        <div id="calender"></div>
+                    </div>
+                </div>
+                <input type="hidden" id="input-id-cliente">
+                <button type="button" onclick="funcion()" class="btn btn-primary py-2 w-100 mb-4" >Cancelar</button>
+                <button type="button" onclick="funcion()" class="btn btn-danger py-2 w-100 mb-4" >Guardar</button>
+            </div>
+        </div>
+    </div>
+
+</div>

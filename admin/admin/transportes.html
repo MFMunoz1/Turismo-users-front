@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en">                               <!-- ventana de listar departamento -->
 
 <head>
     <meta charset="utf-8">
-    <title>Turismo Real - Lista usuarios</title>
+    <title>Turismo Real - Transportes</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -29,8 +29,6 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-bootstrap/0.5pre/css/custom-theme/jquery-ui-1.10.0.custom.css" rel="stylesheet"/>
 </head>
 
 <body>
@@ -42,7 +40,6 @@
                 <a href="#" id="sidebar-toggler" class="sidebar-toggler">
                     <i class="fa fa-bars"></i>
                 </a>
-                
             </nav>
             <!-- Navbar End -->
     <div class="container bg-white d-flex p-0 w-100">
@@ -53,60 +50,52 @@
             </div>
         </div>
         <!-- Spinner End -->
-        
+
+
+        <!-- Sidebar Start -->
         <div data-include="menubar.html"></div>
+        <!-- Sidebar End -->
+
+        <div data-include="modal-planificartransporte.html"></div>
 
         <!-- Content Start -->
         <div class="content w-100" onclick="cerrarNav()">
             
             <!-- Table Start -->
-            
-
             <div class="container-fluid pt-4 px-4">
-                <div class="bg-light text-center rounded p-4">
-                    
+                <div class="bg-light text-center rounded p-4">                     <!-- tabla con el listado de los check in pendientes -->
                         <div class="d-flex align-items-center justify-content-between mb-4 row">
-                            <h6 class="mb-4 ">Gestor de usuarios de sistema</h6>
-                            <div class="col-xl-3 col-md-3">
-                                <label class="col-sm-3 col-form-label">Tipo de usuario</label>                        
-                            </div>
-                            <div class="col-xl-3 col-md-3">
-                                <select id="select-tipo" class="form-select mb-3" aria-label="Default select example">
-                                    <option selected>Seleccione el tipo</option>
-                                    <option selected>Funcionario</option>
-                                    <option selected>Administrador</option>
-                                </select>                            
-                            </div>
-                            <div class="col-xl-3 col-md-3">
-                                <button class="btn btn-primary" onclick="buscarUsuarios()">Buscar</button> 
+                            <h6 class="mb-2 col-xl-3 col-md-3">Lista de transportes</h6>
+                            <!--  Buscador por id de tranporte -->
+                            <!-- Buscador por rut chofer encargado -->
+                            <div class="col-xl-3 col-md-3 col-sm-4">
+                                <a onclick="buscarTranportes()" class="btn btn-sm btn-primary">Buscar</a>
                             </div>
                         </div>
-
-                        <hr>
                     
                     <div class="table-responsive">
                         <table class="table text-start align-middle table-bordered table-hover mb-0">
                             <thead>
                                 <tr class="text-dark">
-                                    <th scope="col">Id</th>
-                                    <th scope="col">Tipo</th>
-                                    <th scope="col">Nombre</th>
-                                    <th scope="col">Email</th>
-                                    <th scope="col">Teléfono</th>
-                                    <th scope="col">Rut</th>
+                                    <th scope="col">Id Transporte</th>
+                                    <th scope="col">Persona a cargo</th>
+                                    <th scope="col">marca auto</th>
+                                    <th scope="col">modelo auto</th>
+                                    <th scope="col">patente</th>
+                                    <th scope="col">capaccidad</th>
+                                    <th scope="col">Region</th>
+                                    <th scope="col">Comuna</th>
                                     <th scope="col"></th>
-                                    <th scope="col"></th>
+                                    <th scope="col"><a class="btn btn-sm btn-primary" href="modal-planificartransporte.html">Ingresar</a></th>
                                 </tr>
                             </thead>
-                            <tbody id="usuarios">
-                                
+                            <tbody id="transportes_lista">
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
             <!-- Table End -->
-
 
             <!-- Footer Start -->
             <div class="container-fluid pt-4 px-4">
@@ -127,7 +116,6 @@
         </div>
         <!-- Content End -->
 
-
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
@@ -145,14 +133,14 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-    <script src="js/utils.js"></script>
+    <script src="js/moment.js"></script>
+    <script src="js/reservas.js"></script>
     <script src="js/csi.min.js"></script>
-    <script src="js/listarUsuarioSistema.js"></script>
+    <script src="js/utils.js"></script>
 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.js"></script>
-
+    <script>
+        buscarReserva();
+    </script>
 </body>
 
 </html>
