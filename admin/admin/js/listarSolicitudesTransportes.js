@@ -9,14 +9,23 @@ function buscarSolicitudes(){
         {
             let body = ""
             $.each(data, function( index, solicitud ) {
+                if(solicitud.tipoServicio === "tour"){
+                    return;
+                }
+                let estadoSolicitud = solicitud.servicioExtra === null || solicitud.servicioExtra === undefined ? "Sin asignar" : solicitud.boletaServicioExtra === null || solicitud.boletaServicioExtra === undefined ? "Pendiente pago" : "Pagada";
                 body += `<tr>
                 <td>${solicitud.idSolicitud}</td>
                 <td>${solicitud.fechaSolicitud.split("T")[0]}</td>
                 <td>${solicitud.origen}</td>
                 <td>${solicitud.destino}</td>
-                <td>Pendiente</td>
-                <td><button onclick="cargarInfoModalTransportes(${solicitud.idSolicitud},${solicitud.idReserva},'${solicitud.origen}','${solicitud.destino}', '${solicitud.personas}')" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-transporte">Planificar</button></td>
-                </tr>`
+                <td>${estadoSolicitud}</td>`;
+                if(estadoSolicitud === "Sin asignar"){
+                    body += `<td><button onclick="cargarInfoModalTransportes(${solicitud.idSolicitud},${solicitud.idReserva},'${solicitud.origen}','${solicitud.destino}', '${solicitud.personas}')" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-transporte">Planificar</button></td>`;
+                }
+                else{
+                    body += `<td><button disabled class="btn btn-primary">Planificar</button></td>`;
+                }
+                body += `</tr>`;
             });
             document.getElementById('solicitudesTransportes').innerHTML = body
         },
@@ -73,7 +82,7 @@ async function asignarTransporte(){
     let horaPlanificacion = $("#hora-planificacion").val();
     let idServicioExtra = $('input[name="radio_transporte"]:checked').val();
 
-    let dateMomentObject = moment(fechaPlanificacion+" "+horaPlanificacion, "YYYY/MM/DD HH:MM"); // 1st argument - string, 2nd argument - format
+    let dateMomentObject = moment(fechaPlanificacion+" "+horaPlanificacion, "YYYY-MM-DD hh:mm"); // 1st argument - string, 2nd argument - format
     let datePlanificacion = dateMomentObject.toDate();
 
     solicitudResponseJson.servicioExtra = {
@@ -81,5 +90,20 @@ async function asignarTransporte(){
     };
     solicitudResponseJson.fechaPlanificacion = datePlanificacion;
 
-
+    $.ajax({
+        url : "http://localhost:8085/servicio-extra/asignar-transporte",
+        type: "POST",
+        //dataType : "json",
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify(solicitudResponseJson),
+        success: function(data, textStatus, jqXHR)
+        {
+            alert("Transporte asignado con éxito");
+            location.reload();
+        },
+        error: function (jqXHR, textStatus, errorThrown)
+        {
+            alert("Error al asignar transporte");
+        }
+    });
 }
