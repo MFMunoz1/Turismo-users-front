@@ -1,0 +1,35 @@
+<div class="modal fade" id="modal-tour" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="text-primary"><i class="fa fa-3x me-2"></i>Tours</h4>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body p-4">
+                <h5>Datos reserva</h5>
+                <h6 id="dato-id-reserva"></h6>
+                <h6 id="dato-estado-reserva"></h6>
+                <h6 id="dato-nombre-depto"></h6>
+                <h6 id="dato-region-depto"></h6>
+                <h6 id="dato-comuna-depto"></h6>
+
+                <hr>
+
+                <h5>Datos solicitud</h5>
+                <h6 id="dato-solicitud-personas"></h6>
+
+                <hr>
+
+                <h5>Planificar horario</h5>
+                <h6>Fecha: </h6>
+                <input type="date" id="fecha-planificacion" class="form-control">
+                <br>
+                <h6>Hora: </h6>
+                <input type="time" id="hora-planificacion" class="form-control">
+
+                <hr>
+                <button type="button" onclick="planificarTour()" class="btn btn-danger py-2 w-100 mb-4" >Confirmar</button>
+            </div>
+        </div>
+    </div>
+</div>

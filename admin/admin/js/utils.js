@@ -27,7 +27,7 @@ function loginUser(){
             setCookie("user", data.nombreUsuario, 30);
             setCookie("tipo_usuario", data.tipoUsuario, 30);
             if(data.tipoUsuario === "Funcionario"){
-                window.location.replace("checklist.html");
+                window.location.replace("checklist-reservas.html");
             }
             else if(data.tipoUsuario === "Administrador"){
                 window.location.replace("actualizarEliminarDepto.html");

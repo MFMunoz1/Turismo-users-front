@@ -9,36 +9,40 @@ function buscarSolicitudes(){
         {
             let body = ""
             $.each(data, function( index, solicitud ) {
-                if(solicitud.tipoServicio === "tour"){
+                if(solicitud.tipoServicio === "transporte"){
                     return;
                 }
-                let estadoSolicitud = solicitud.servicioExtra === null || solicitud.servicioExtra === undefined ? "Sin asignar" : solicitud.boletaServicioExtra === null || solicitud.boletaServicioExtra === undefined ? "Pendiente pago" : "Pagada";
+                let estadoSolicitud = solicitud.fechaPlanificacion !== null && solicitud.fechaPlanificacion !== undefined ? "Planificada" : "Pendiente";
+                /**<th scope="col">ID</th>
+                                    <th scope="col">Fecha Solicitud</th>
+                                    <th scope="col">Estado</th>
+                                    <th scope="col"></th> */
                 body += `<tr>
                 <td>${solicitud.idSolicitud}</td>
+                <td>${solicitud.personas}</td>
                 <td>${solicitud.fechaSolicitud.split("T")[0]}</td>
-                <td>${solicitud.origen}</td>
-                <td>${solicitud.destino}</td>
+                <td>${estadoSolicitud === "Planificada" ? solicitud.fechaPlanificacion.split("T")[0] : "Sin planificar"}</td>
                 <td>${estadoSolicitud}</td>`;
-                if(estadoSolicitud === "Sin asignar"){
-                    body += `<td><button onclick="cargarInfoModalTransportes(${solicitud.idSolicitud},${solicitud.idReserva},'${solicitud.origen}','${solicitud.destino}', '${solicitud.personas}')" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-transporte">Planificar</button></td>`;
+                if(estadoSolicitud === "Pendiente"){
+                    body += `<td><button onclick="cargarInfoModalTours(${solicitud.idSolicitud},${solicitud.idReserva}, '${solicitud.personas}')" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-tour">Planificar</button></td>`;
                 }
                 else{
                     body += `<td><button disabled class="btn btn-primary">Planificar</button></td>`;
                 }
                 body += `</tr>`;
             });
-            document.getElementById('solicitudesTransportes').innerHTML = body
+            document.getElementById('solicitudesTours').innerHTML = body
         },
         error: function (jqXHR, textStatus, errorThrown)
         {
-            alert("Error al obtener regiones");
+            alert("Error al obtener solicitudes");
         }
     });
 }
 
 let solicitudAsignada = null;
 
-async function cargarInfoModalTransportes(idSolicitud, idReserva, origen, destino, personas){
+async function cargarInfoModalTours(idSolicitud, idReserva, personas){
     solicitudAsignada = idSolicitud;
 
     let reservaResponse = await fetch(
@@ -51,45 +55,22 @@ async function cargarInfoModalTransportes(idSolicitud, idReserva, origen, destin
     $("#dato-region-depto").html("Region: "+reservaAsignada.departamento.region);
     $("#dato-comuna-depto").html("Comuna: "+reservaAsignada.departamento.comuna);
 
-    $("#dato-solicitud-origen").html("Origen: "+origen);
-    $("#dato-solicitud-destino").html("Destino: "+destino);
-    $("#dato-solicitud-personas").html("Cantidad de personas: "+personas);
-
     $("#fecha-planificacion").val(reservaAsignada.fechaLlegada.split("T")[0]);
 
-    let transportesResponse = await fetch(
-        'http://localhost:8085/servicio-extra/listar-transporte-region-comuna?region='+reservaAsignada.departamento.region+'&comuna='+reservaAsignada.departamento.comuna+"&personas="+personas);
-    let transportesResponseJSON = await transportesResponse.json();
-
-    let transportesBody = "";
-    $.each(transportesResponseJSON, function( index, transporte ) {
-        transportesBody += `<tr>
-        <td>${transporte.idServicioExtra}</td>
-        <td>${transporte.marca+" "+transporte.modelo}</td>
-        <td>${transporte.patente}</td>
-        <td>${transporte.personaACargo}</td>
-        <td><input type="radio" id="${transporte.idServicioExtra}" name="radio_transporte" value="${transporte.idServicioExtra}"></td>
-        </tr>`
-    });
-    document.getElementById('transportesDisponibles').innerHTML = transportesBody
-
+    $("#dato-solicitud-personas").html("Cantidad de personas: "+personas);
 }
 
-async function asignarTransporte(){
+async function planificarTour(){
     let solicitudResponse = await fetch(
         'http://localhost:8085/servicio-extra/buscar-solicitud?id='+solicitudAsignada);
     let solicitudResponseJson = await solicitudResponse.json();
 
     let fechaPlanificacion = $("#fecha-planificacion").val();
     let horaPlanificacion = $("#hora-planificacion").val();
-    let idServicioExtra = $('input[name="radio_transporte"]:checked').val();
 
     let dateMomentObject = moment(fechaPlanificacion+" "+horaPlanificacion, "YYYY-MM-DD hh:mm"); // 1st argument - string, 2nd argument - format
     let datePlanificacion = dateMomentObject.toDate();
 
-    solicitudResponseJson.servicioExtra = {
-        idServicioExtra: idServicioExtra
-    };
     solicitudResponseJson.fechaPlanificacion = datePlanificacion;
 
     $.ajax({
@@ -100,12 +81,12 @@ async function asignarTransporte(){
         data: JSON.stringify(solicitudResponseJson),
         success: function(data, textStatus, jqXHR)
         {
-            alert("Transporte asignado con éxito");
+            alert("Tour planificado con éxito");
             location.reload();
         },
         error: function (jqXHR, textStatus, errorThrown)
         {
-            alert("Error al asignar transporte");
+            alert("Error al planificar tour");
         }
     });
 }
