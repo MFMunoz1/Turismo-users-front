@@ -37,7 +37,7 @@
                 <a href="actualizarEliminarDepto.html" class="navbar-brand me-2">
                     <h2 class="text-primary mb-0">Turismo Real</h2>
                 </a>
-                <a href="#" class="sidebar-toggler">
+                <a href="#" id="sidebar-toggler" class="sidebar-toggler">
                     <i class="fa fa-bars"></i>
                 </a>
             
@@ -54,12 +54,13 @@
 
 
     <!-- Sidebar Start -->
-    <div data-include="menubar-funcionario.html"></div>
+    <div data-include="menubar.html"></div>
 
     <!-- Sidebar End -->
 
 
     <!-- Content Start -->
+    <div class="content w-100" onclick="cerrarNav()">
         <div class="container-fluid pt-4 px-4">
             <div class="row g-4">
 
@@ -68,65 +69,98 @@
                 <div class="col-sm-12 col-xl-6">
                 
                 <div class="col-sm-12">
-                    <div class="bg-light rounded p-4"> 
-                        <form name="datoscheck">
-                            <h6 class="mb-4">Datos Departamento</h6>
-                            <label class="col-sm-12 col-form-label">Nombre: Nombre depto</label>
-                            <label class="col-sm-12 col-form-label">id: 198</label>
-                            <label class="col-sm-12 col-form-label">Direccion: Calle #123</label>
-                            <label class="col-sm-12 col-form-label">Zona: Comuna, Region</label>
-                            <label class="col-sm-12 col-form-label">Valor dairio: $15.000</label>
-                            <label class="col-sm-12 col-form-label">Estado: No disponible</label>
-                        </form>
-                    </div>
-                </div>
-                </div>
-
-                <div class="col-sm-12 col-xl-6">
                     <div class="bg-light rounded p-4">
-                        <h6 class="mb-4">Datos mantencion</h6>
-                        <form name="fchecklist">
-                           
+                        <h6 class="mb-4">Datos mantencion</h6>                           
                             <div class="row mb-3 ">
                                 <label class="col-sm-3 col-form-label">Titulo</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control">
+                                    <input type="text" id="txt-titulo-mantencion" class="form-control">
                                 </div>
                             </div>
 
                             <div class="row mb-3 ">
                                 <label class="col-sm-3 col-form-label">Descripcion</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control">
+                                    <input type="text" id="txt-descripcion-mantencion" class="form-control">
                                 </div>
                             </div>
 
                             <div class="row mb-3 ">
-                                <label class="col-sm-3 col-form-label">Encargado</label>
+                                <label class="col-sm-3 col-form-label">Presupuesto ($)</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control">
+                                    <input type="text" id="txt-presupuesto-mantencion" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="9" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3 ">
+                                <label class="col-sm-3 col-form-label">Estado</label>
+                                <div class="col-sm-9">
+                                    <select id="select-estado" class="form-select mb-3">
+                                        <option value="En curso">En curso</option>
+                                        <option value="Finalizada">Finalizada</option>
+                                    </select>
                                 </div>
                             </div>
 
                             <div class="row mb-3 ">
                                 <label class="col-sm-3 col-form-label">Fecha inicio</label>
                                 <div class="col-sm-9">
-                                    <input type="date" class="form-control">
+                                    <input type="date" id="date-fecha-inicio" class="form-control">
                                 </div>
                             </div>
 
                             <div class="row mb-3 ">
                                 <label class="col-sm-3 col-form-label">Fecha termino</label>
                                 <div class="col-sm-9">
-                                    <input type="date" class="form-control">
+                                    <input type="date" id="date-fecha-termino" class="form-control">
                                 </div>
                             </div>
 
-                        </form>
+                        <button type="button" onclick="modificarDatosMantencion()" class="btn btn-primary">Modificar datos</button> 
+
                     </div>
                 </div>
+                </div>
 
-                <button type="submit" class="btn btn-primary">Registrar mantencion</button> 
+                <div class="col-sm-12 col-xl-6">
+                    <div class="bg-light rounded p-4">
+                        <h6 class="mb-4">Fotos de la mantención</h6> <!-- imagen + titulo segun la tabla de la base de datos -->
+                        <div class="row mb-3">
+                            <label for="inputPassword3" class="col-sm-3 col-form-label">Titulo de imagen</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" id="titulo-imagen">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-9">
+                                <!-- recibe jpeg y png -->
+                                <input class="form-control" type="file" id="formFile">
+                            </div>
+                            <button id="btn-cargar-foto"type="button" class="btn btn-primary col-sm-3" onclick="cargarFotoModificar()">Cargar</button>
+                        </div>
+                        
+                        <div class="container-fluid pt-4 px-4">
+                            <div class="bg-light text-center rounded p-4">
+                                
+                                <div class="table-responsive">
+                                    <table class="table text-start align-middle table-bordered table-hover mb-0">
+                                        <thead>
+                                            <tr class="text-dark">
+                                                <th scope="col">Titulo</th>
+                                                <th scope="col">Imagen</th>
+                                                <th scope="col"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="table-body-imagenes-mantencion">
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" style="width: 100%;" onclick="modificarFotosMantencion()">Modificar Imagenes</button>
+    
+                    </div>
+                </div>
 
                     <!-- Footer Start -->
                     <div class="container-fluid pt-4 px-4">
@@ -146,8 +180,8 @@
                     <!-- Footer End -->
 
                 </div>    
-            </div>
         </div>
+    </div>
         <!-- Widgets End -->
 
 
@@ -170,13 +204,16 @@
     <script src="lib/tempusdominus/js/moment.min.js"></script>
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-    <script src="js/checklist.js"></script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-    <script src="js/checklist.js"></script>
+    <script src="js/mantencionDepto.js"></script>
     <script src="js/csi.min.js"></script>
     <script src="js/utils.js"></script>
+
+    <script>
+        cargarDatosModificacionMantencion();
+    </script>
 
 </body>
 
